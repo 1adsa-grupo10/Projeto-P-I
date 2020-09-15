@@ -1,9 +1,8 @@
 create database projeto_pi;
+use database projeto_pi;
 
 create table sensor_proto (
 id_info_sensor int primary key auto_increment,
-sensor_umidade varchar(50),
-sensor_temp varchar(50),
 registro_umidade varchar(10),
 registro_temp varchar(10),
 registro_hora datetime not null,
@@ -25,8 +24,6 @@ senha varchar(99) not null,
 email varchar(100) not null
 )auto_increment=100;
 
-alter table sensor_proto drop column sensor_temp;
-select * from sensor_proto;
 
 
 
