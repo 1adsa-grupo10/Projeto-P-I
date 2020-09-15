@@ -1,7 +1,7 @@
 create database projeto_pi;
-use database projeto_pi;
+use projeto_pi;
 
-create table sensor_proto (
+create table sensor_proto ( 
 id_info_sensor int primary key auto_increment,
 registro_umidade varchar(10),
 registro_temp varchar(10),
@@ -40,5 +40,22 @@ select * from cadastro;
 insert into cadastro values
 (null, 'Julia Mello', '42345670987', '11956732145', 'venus51', 'juliamello@hotmail.com');
 
+	-- Alterações - Felipe
+-- Renomeação do campo id_usuario da tabela sensor_proto
+alter table sensor_proto rename column id_usuario to fkUsuario;
 
+-- Modificação de campo da tabela sensor_proto para chave estrangeira
+alter table sensor_proto modify column fkUsuario int;
+alter table sensor_proto add foreign key (fkUsuario) references cadastro(id_usuario);
 
+-- Verificação das atualizações da coluna fkUsuario
+desc sensor_proto;
+
+-- Inserção de dados na tabela sensor_proto
+insert into sensor_proto (registro_umidade,registro_temp,registro_hora, fkUsuario) values
+('70%','25ºC','2020-9-15 19:16:53',101),
+('80%','24ºC','2020-9-15 19:29:36',100);
+
+-- Verificação do cruzamendo de dados entre as tabelas sensor_proto e castro
+Select * from cadastro, sensor_proto where fkUsuario=id_usuario;
+    
