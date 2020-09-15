@@ -25,4 +25,9 @@ senha varchar(99) not null,
 email varchar(100) not null
 )auto_increment=100;
 
+alter table sensor_proto drop column sensor_temp;
+select * from sensor_proto;
+
+
+
 
