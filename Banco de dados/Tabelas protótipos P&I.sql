@@ -34,8 +34,11 @@ insert into cadastro values
 -- Inserção de dados-Larissa 
 insert into cadastro values
 (null,'Larissa Lima','40896711838','11958859656','larilari.iê', 'larissaellima@hotmail.com');
+select * from cadastro;
 
-
+-- Inserção de dados-Vitória
+insert into cadastro values
+(null, 'Julia Mello', '42345670987', '11956732145', 'venus51', 'juliamello@hotmail.com');
 
 
 
