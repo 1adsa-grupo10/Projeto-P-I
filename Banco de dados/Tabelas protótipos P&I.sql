@@ -24,15 +24,16 @@ senha varchar(99) not null,
 email varchar(100) not null
 )auto_increment=100;
 
+-- Inserção de dados-Miguel
 insert into cadastro values
 (null,'Miguel Nunes','84726352635','11949015124','12344321','miguelnunes1477@gmail.com'),
 (null,'Felipe Higa','48475304893','11958115575','736w4e44we35','fe.higa@gmail.com'),
 (null,'Vitória Souza','42442960850','11997327321','ff7r7fr7d','vitoria.souzasantos@hotmail.com'),
 (null,'Victor Veniti','49797642828','11975285232','sorvetedebaunilha','victorveniti@hotmail.com');
 
-
-
-
+-- Inserção de dados-Larissa 
+insert into cadastro values
+(null,'Larissa Lima','40896711838','11958859656','larilari.iê', 'larissaellima@hotmail.com');
 
 
 
