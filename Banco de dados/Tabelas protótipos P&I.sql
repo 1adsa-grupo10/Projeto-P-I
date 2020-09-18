@@ -58,4 +58,16 @@ insert into sensor_proto (registro_umidade,registro_temp,registro_hora, fkUsuari
 
 -- Verificação do cruzamendo de dados entre as tabelas sensor_proto e castro
 Select * from cadastro, sensor_proto where fkUsuario=id_usuario;
+
+-- Inserção de dados na tabela sensor_proto -- Miguel
+insert into sensor_proto (registro_umidade,registro_temp,registro_hora, fkUsuario) values
+('69%','24ºC','2020-9-15 18:21:23',102),
+('77%','27ºC','2020-9-15 17:32:36',103),
+('73%','26ºC','2020-9-15 16:11:41',104),
+('85%','23ºC','2020-9-15 13:45:36',105);
+
+-- Verificação do cruzamendo de dados entre as tabelas sensor_proto e castro -- Miguel
+Select * from cadastro, sensor_proto where fkUsuario=id_usuario;
+
+
     
