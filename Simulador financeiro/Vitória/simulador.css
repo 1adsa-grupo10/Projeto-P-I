@@ -13,6 +13,8 @@ body {
     color: rgb(6, 99, 6);
 }
 
+
+
 .container {
     height: 70px;
     width: 90%;
@@ -33,18 +35,6 @@ body {
     margin-left: 10%;
     margin-right: 60px;
     margin-top: 25px;
-}
-
-ul {
-    float: right;
-    text-transform: uppercase;
-    margin-left: 0%;
-}
-
-li {
-    float: left;
-    margin: 18px;
-    list-style: none;
 }
 
 img {
