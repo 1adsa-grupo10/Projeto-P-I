@@ -69,3 +69,7 @@ insert into sensor_proto (registro_umidade,registro_temp,registro_hora, fkUsuari
 -- Verificação do cruzamendo de dados entre as tabelas sensor_proto e castro -- Miguel
 Select * from cadastro, sensor_proto where fkUsuario=id_usuario;
 
+select * from cadastro;
+select * from sensor_proto;
+select * from cadastro, sensor_proto where id_usuario=fkUsuario;
+insert into cadastro values (null,"Teste","11111111111","913213494","123","teste@teste.com");
