@@ -73,3 +73,11 @@ select * from cadastro;
 select * from sensor_proto;
 select * from cadastro, sensor_proto where id_usuario=fkUsuario;
 insert into cadastro values (null,"Teste","11111111111","913213494","123","teste@teste.com");
+
+
+
+select * from cadastro;
+
+select * from sensor_proto;
+
+select * from cadastro, sensor_proto where id_usuario=fkUsuario;
