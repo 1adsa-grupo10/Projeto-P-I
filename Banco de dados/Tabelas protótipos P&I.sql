@@ -81,3 +81,9 @@ select * from cadastro;
 select * from sensor_proto;
 
 select * from cadastro, sensor_proto where id_usuario=fkUsuario;
+
+-- alterações de atributos e campos - Vitória
+alter table sensor_proto modify registro_hora datetime default current_timestamp;
+desc sensor_proto;
+
+
