@@ -38,6 +38,11 @@ body {
     transition: color 0.5s;
 }
 
+.container a {
+    text-decoration: none;
+    color: black;
+}
+
 .login a {
     text-decoration: none;
     color: black;
@@ -45,6 +50,11 @@ body {
 
 .navbar li:hover {
     color: green;
+}
+
+.container a:hover {
+    color: green;
+    transition: color 0.5s;
 }
 
 .bandeira img {
@@ -136,161 +146,166 @@ body {
     flex-direction: row;
     width: 100%;
     height: 70vh;
-  }
-  
-  .infos {
+}
+
+.infos {
     display: flex;
     flex-direction: row;
     width: 90%;
     height: 30vh;
-  }
-  
-  .info-title {
+}
+
+.info-title {
     display: flex;
     width: 20%;
     height: 25%;
-  }
-  
-  .info-title img {
+}
+
+.info-title img {
     width: 100%;
     height: 100%;
-  }
-  
-  .info-text {
+}
+
+.info-text {
     display: flex;
     flex-direction: column;
     width: 100%;
     font-family: Roboto;
-  }
-  
-  .info-text h1 {
+}
+
+.info-text h1 {
     line-height: 30px;
     color: #1dd1a1;
     font-size: 20px;
-  }
-  
-  .info-text p {
+}
+
+.info-text p {
     margin-top: 10px;
     color: #bdc3c7;
     font-size: 20px;
-  }
-  
-  .about{
+}
+
+.about {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 50vh; 
+    height: 50vh;
     background-color: #ecf0f1;
-  }
-  
-  .about-info {
+}
+
+.about-info {
     display: flex;
     flex-direction: column;
-    width: 40%; 
-  }
-  
-  .about-info h1{
+    width: 40%;
+}
+
+.about-info h1 {
     font-style: italic;
     font-weight: 400;
     font-size: 35px;
     line-height: 80px;
-  }
-  .about-info p{
+}
+
+.about-info p {
     font-size: 18px;
     color: #95a5a6;
-  }
-  .about-info img{
+}
+
+.about-info img {
     width: 100%;
     height: 100%;
-  }
-  
-  .title-team{
-    height: 200px;  
+}
+
+.title-team {
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font: 700 Archivo;
     text-shadow: 2px 2px #333;
-  }
-  .team-container{
+}
+
+.team-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     height: 100vh;
-  }
-  
-  .team-item{
+}
+
+.team-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 300px;
     width: 350px;
-  }
-  
-  .team-header{
+}
+
+.team-header {
     display: flex;
     height: 70%;
     width: 60%;
     border-radius: 50%;
-    -webkit-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.34);
-    -moz-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.34);
-    box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.34);
-  }
-  
-  .team-header img{
+    -webkit-box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.34);
+    box-shadow: 10px 11px 5px 0px rgba(0, 0, 0, 0.34);
+}
+
+.team-header img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
-  }
-  
-  .team-content{
+}
+
+.team-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 30%;
-  }
-  
-  .team-content h2, p{
+}
+
+.team-content h2,
+p {
     font-family: montserrat;
     color: #bdc3c7;
-  }
-  
-  .contact{
+}
+
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 50vh;
-  }
-  
-  .contact-title{
+}
+
+.contact-title {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 15vh;
     width: 30%;
-  }
-  .contact-title h1{
+}
+
+.contact-title h1 {
     font-style: italic;
     font-weight: 400;
-  }
-  
-  .contact-item{
+}
+
+.contact-item {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 70%;
     height: 50vh;
-  }
-  
-  .contact-info{
+}
+
+.contact-info {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -298,24 +313,25 @@ body {
     font-size: 20px;
     height: 250px;
     width: 50%;
-    border-right:  2px solid #bdc3c7;
-  }
-  .contact-about{
+    border-right: 2px solid #bdc3c7;
+}
+
+.contact-about {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 250px;
     width: 50%;
-  }
-  
-  .contact-about label{
+}
+
+.contact-about label {
     font-size: 20px;
     margin-bottom: 20px;
     font-family: montserrat;
-  }
-  
-  .contact-about input{
+}
+
+.contact-about input {
     width: 250px;
     height: 30px;
     font-size: 20px;
@@ -323,8 +339,9 @@ body {
     background-color: #95a5a6;
     color: #ecf0f1;
     font-family: montserrat;
-  }
-  .contact-about a{
+}
+
+.contact-about a {
     display: block;
     text-align: center;
     padding: 10px;
@@ -332,9 +349,10 @@ body {
     background-color: #1dd1a1;
     color: #ecf0f1;
     font-family: montserrat;
-  }
+}
 
-  /* .footer{
+
+/* .footer{
     display: flex;
     justify-content: center;
     align-items: center;
