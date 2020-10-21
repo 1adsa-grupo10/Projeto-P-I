@@ -2,9 +2,9 @@ const sensors = require('./sensors')
 
 class NewArduinoHumidity {
 
-    constructor(){
+    constructor() {
         this.listData = [];
-		this.__listDataTemp = [];
+        this.__listDataTemp = [];
         this.listDataHour = [];
         this.currentHumity = [];
 
@@ -16,38 +16,38 @@ class NewArduinoHumidity {
     get List() {
         return this.listData;
     }
-	
-	get ListHour() {
-		return this.listDataHour;
+
+    get ListHour() {
+        return this.listDataHour;
     }
-    
-    get ListTemp(){
+
+    get ListTemp() {
         return this.listTempData;
     }
 
-    get CurrentTemperature(){
+    get CurrentTemperature() {
         return this.currentTemp;
     }
 
-    get CurrentHumity(){
+    get CurrentHumity() {
         return this.currentHumity;
     }
-    
-    SetConnection(){
+
+    SetConnection() {
         setInterval(() => {
-            let data_float = sensors.dht11({minHum:50, maxHum:100, minTemp: 25, maxTemp: 35});
+            let data_float = sensors.dht11({ minHum: 50, maxHum: 70, minTemp: 17, maxTemp: 29 });
 
             let current_temp = data_float[1].toFixed(2);
             let current_humity = data_float[0].toFixed(2);
-            
+
             if (this.__listDataTemp.length === 59) {
-                let sum = this.__listDataTemp.reduce((a, b) =>  a + b, 0);
+                let sum = this.__listDataTemp.reduce((a, b) => a + b, 0);
                 this.listDataHour.push((sum / this.__listDataTemp.length).toFixed(2));
-                while(this.__listDataTemp.length > 0) {
+                while (this.__listDataTemp.length > 0) {
                     this.__listDataTemp.pop();
                 }
             }
-            
+
             this.__listDataTemp.push(data_float[0]);
             this.listData.push(data_float[0]);
             this.listTempData.push(data_float[1]);
@@ -62,9 +62,9 @@ class NewArduinoHumidity {
 
             /* console.log(data_float[1].toFixed(2)); */
             /* console.log(data_float[1]); */
-           
-                
-    
+
+
+
         }, 100);
     }
 }
@@ -72,4 +72,4 @@ class NewArduinoHumidity {
 const serial = new NewArduinoHumidity();
 serial.SetConnection();
 
-module.exports.ArduinoDataHumidity = {List: serial.List, ListHour: serial.ListHour, ListTemp: serial.ListTemp, TempCurrent: serial.CurrentTemperature, HumityCurrent: serial.CurrentHumity} 
+module.exports.ArduinoDataHumidity = { List: serial.List, ListHour: serial.ListHour, ListTemp: serial.ListTemp, TempCurrent: serial.CurrentTemperature, HumityCurrent: serial.CurrentHumity }
