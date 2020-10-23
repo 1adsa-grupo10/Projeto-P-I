@@ -1,39 +1,59 @@
 create database projeto_pi;
 use projeto_pi;
 
-create table cadastro_pessoa_fisica(
-	id_pessoa_fisica int primary key auto_increment,
-	nome_completo varchar(100) not null,
-	cpf char(11) not null,
-	senha varchar(99) not null,
-	email varchar(100) not null,
+create table cadastro_cliente(
+	id_cliente int primary key auto_increment,
+	nome_razaoSocial varchar(100) not null,
+	cpf_cnpj varchar(20) not null,
+    tipo char(2),
+    check (tipo = 'PF' or tipo = 'PJ'),
     telefone_celular varchar(20) not null,
     telefone_fixo varchar(30)
 )auto_increment=100;
 
-create table cadastro_pessoa_juridica(
-	id_pessoa_juridica int primary key auto_increment,
-	razao_social varchar(100) not null,
-	cpnj char(18) not null,
+create table usuario(
+	id_usuario int auto_increment,
+	nome varchar(100) not null,
 	senha varchar(99) not null,
 	email varchar(100) not null,
-    telefone_fixo varchar(30)
+    fk_cliente int,
+    foreign key(fk_cliente) references cadastro_cliente(id_cliente),
+    primary key (id_usuario,fk_cliente)
 )auto_increment=1000;
 
-create table sensor( 
-	id_sensor int primary key auto_increment,
+create table estufa(
+	id_estufa int auto_increment,
+    nome_estufa varchar(30),
+    tipo_cultura varchar(40),
+    fk_cliente int,
+    foreign key(fk_cliente) references cadastro_cliente(id_cliente),
+    primary key(id_estufa, fk_cliente)
+);
+
+create table sensor(
+	id_sensor int auto_increment,
+    status_sensor varchar(10) default 'ativo',
+    check(status_sensor = 'ativo' or status_sensor = 'inativo' or status_sensor = 'manutencao'),
+    fk_estufa int,
+    foreign key(fk_estufa) references estufa(id_estufa),
+    primary key(id_sensor,fk_estufa)
+    ) auto_increment 10;
+    
+create table dados_sensor( 
+	id_dados_sensor int auto_increment,
 	registro_umidade decimal,
 	registro_temp decimal,
 	registro_hora datetime not null,
-    local_sensor varchar(30),
-    status_sensor varchar(30) default 'Inativo',
-    check (status_sensor = 'Ativo' or status_sensor = 'Inativo' or status_sensor = 'Manutenção'),
-	fk_pessoa_fisica int,
-    foreign key (fk_pessoa_fisica) references cadastro_pessoa_fisica(id_pessoa_fisica),
-    fk_pessoa_juridica int,
-    foreign key (fk_pessoa_juridica) references cadastro_pessoa_juridica(id_pessoa_juridica)
+    fk_sensor int,
+    foreign key(fk_sensor) references sensor(id_sensor),
+    primary key(id_dados_sensor,fk_sensor)
 );
-
+select * from cadastro_cliente;
+select * from dados_sensor;
+select * from estufa;
+select * from sensor;
+select * from usuario;
+select * from cadastro_cliente, usuario, estufa, sensor, dados_sensor;
 
 
 -- Inserção de dados
@@ -56,6 +76,6 @@ insert into sensor (registro_umidade,registro_temp,registro_hora, local_sensor, 
 ('85%','23ºC','2020-9-15 13:45:36','EstufaF',105);
 
 
-select * from cadastro_usuario;
-select * from sensor;
-select * from cadastro_usuario, sensor where fk_usuario=id_usuario;
+-- select * from cadastro_usuario;
+-- select * from sensor;
+-- select * from cadastro_usuario, sensor where fk_usuario=id_usuario;
