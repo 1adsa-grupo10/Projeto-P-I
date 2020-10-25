@@ -28,7 +28,8 @@
                 <img class="login_icone" src="./imagens/login.svg" alt="">
                 <input type="text" id="in_email" placeholder="CPF ou email">
                 <input type="password" id="in_senha" placeholder="Digite sua senha">
-                <button>Entrar</button>
+                <b id="b_falha" style="color: red;"></b>
+                <button onclick="entrar()">Entrar</button>
                 <h3>Ainda não tem cadastro?</h3>
                 <a onclick="block()">Cadastrar</a>
 
@@ -62,5 +63,14 @@
     function login() {
         cadastro1.style.display = 'none';
         login1.style.display = 'flex';
+    }
+    function entrar() {
+        b_falha.innerHTML = '';
+        
+        if(in_email.value == 'miguel.assuncao@bandtec.com.br' && in_senha.value == 12345){
+            window.location.href = 'x'
+        } else {
+            b_falha.innerHTML = 'Falha de autenticação!';
+        }
     }
 </script>
