@@ -56,24 +56,53 @@ select * from usuario;
 select * from cadastro_cliente, usuario, estufa, sensor, dados_sensor;
 
 
--- Inserção de dados
-insert into cadastro_pessoa_fisica values
-(null,'Miguel Nunes','84726352635','12344321','miguelnunes1477@gmail.com', '1194435352'),
-(null,'Felipe Higa','48475304893','736w4e44we35','fe.higa@gmail.com', '1197456463'),
-(null,'Vitória Souza','42442960850','ff7r7fr7d','vitoria.souzasantos@hotmail.com', '1197745453'),
-(null,'Victor Veniti','49797642828','sorvetedebaunilha','victorveniti@hotmail.com', '11955536932'),
-(null,'Larissa Lima','40896711838','larilari.iê', 'larissaellima@hotmail.com', '11955332235'),
-(null, 'Julia Mello', '42345670987', 'venus51', 'juliamello@hotmail.com', '119655323677');
+-- Inserção de dados cliente
+insert into cadastro_cliente values
+(null,'Miguel Nunes','84726352635','PF', '11-94435352', '11-22345678'),
+(null,'Felipe Higa','48475304893','PF', '11-97456463', '11-28934512'),
+(null,'Vitória Souza','42442960850', 'PF', '11-997327321', '11-22032028'),
+(null,'Victor Veniti','44573282000198','PJ', '11-955536932', '11-22623169'),
+(null,'Larissa Lima','42811692000133','PJ', '11-955332235', '11-34718023'),
+(null, 'Julia Mello', '4178209000123', 'PJ','11-9655323677', '11-45327891');
 
+-- inserção de dados usuário
+insert into usuario values 
+(null, 'Miguel Nunes', 'saturno09', 'miguel.assuncao@bandtec.com.br', 100),
+(null, 'Bernardo Gadelha', 'pizza123', 'gadelha20bernardo@hotmail.com', 102),
+(null, 'Victor Veniti', 'sorvetedebaunilha', 'victor.veniti@gmail.com', 103),
+(null, 'Theo Souza', 'cinema2020', 'theo1209@gmail.com', 101),
+(null, 'Julia Mello', 'estrela10', 'juliamello@gmail.com', 105),
+(null, 'Larissa Lima', 'ih.larilarie', 'larissa.lima@bandtec.com.br', 104);
 
--- Inserção de dados na tabela sensor_proto -- Miguel
-insert into sensor (registro_umidade,registro_temp,registro_hora, local_sensor, status_sensor,fk_pessoa_fisica) values
-('70%','25ºC','2020-9-15 19:16:53', 'EstufaA',101),
-('80%','24ºC','2020-9-15 19:29:36', 'EstufaB',100),
-('69%','24ºC','2020-9-15 18:21:23', 'EstufaC',102),
-('77%','27ºC','2020-9-15 17:32:36','EstufaD',103),
-('73%','26ºC','2020-9-15 16:11:41','EstufaE',104),
-('85%','23ºC','2020-9-15 13:45:36','EstufaF',105);
+-- inserção de dados estufa
+(null, 'Estufa A', 'Alface', 105),
+(null, 'Estufa B', 'Alface', 101),
+(null, 'Estufa C', 'Tomate', 104),
+(null, 'Estufa D', 'Alface', 102),
+(null, 'Estufa E', 'Tomate', 105),
+(null, 'Estufa F', 'Alface', 103),
+(null, 'Estufa G', 'Tomate', 100);
+
+-- inserção de dados sensor
+(null, 'ativo', 05),
+(null, 'ativo', 03),
+(null, 'ativo', 07),
+(null, 'ativo', 02),
+(null, 'ativo', 04),
+(null, 'ativo', 07),
+(null, 'ativo', 01),
+(null, 'ativo', 06);
+
+-- Inserção de dados dados_sensor
+insert into dados_sensor values
+(null, '70%','25ºC','2020-9-15 19:16:53', 11),
+(null,'80%','24ºC','2020-9-15 19:29:36', 12),
+(null,'69%','24ºC','2020-9-15 18:21:23', 14),
+(null, '77%','27ºC','2020-9-15 17:32:36', 13),
+(null, '73%','26ºC','2020-9-15 16:11:41', 10),
+(null, '85%','23ºC','2020-9-15 13:45:36', 16),
+(null, '50%','21ºC','2020-9-15 12:02:16', 15),
+(null, '80%','17ºC','2020-9-15 11:31:36', 17);
 
 
 -- select * from cadastro_usuario;
