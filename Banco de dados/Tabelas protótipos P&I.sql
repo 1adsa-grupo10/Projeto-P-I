@@ -113,7 +113,15 @@ insert into dados_sensor values
 -- select * from cadastro_usuario, sensor where fk_usuario=id_usuario;
 
 
-select estufa.nome_estufa ,sensor.status_sensor, dados_sensor.registro_umidade ,dados_sensor.registro_temp, 
+select * from sensor, dados_sensor, estufa, cadastro_cliente, usuario
+where fk_sensor = id_sensor 
+and fk_estufa = id_estufa 
+and estufa.fk_cliente = cadastro_cliente.id_cliente
+and fk_estufa = id_estufa
+and usuario.fk_cliente = cadastro_cliente.id_cliente;
+
+select estufa.nome_estufa ,sensor.status_sensor, dados_sensor.registro_umidade ,
+dados_sensor.registro_temp, 
 estufa.nome_estufa, cadastro_cliente.nome_razaoSocial
 from sensor, dados_sensor, estufa, cadastro_cliente
 where fk_sensor = id_sensor 
