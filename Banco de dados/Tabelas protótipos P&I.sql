@@ -29,7 +29,7 @@ create table estufa(
     fk_cliente int,
     foreign key(fk_cliente) references cadastro_cliente(id_cliente),
     primary key(id_estufa, fk_cliente)
-);
+)auto_increment=1;
 
 create table sensor(
 	id_sensor int auto_increment,
@@ -38,7 +38,7 @@ create table sensor(
     fk_estufa int,
     foreign key(fk_estufa) references estufa(id_estufa),
     primary key(id_sensor,fk_estufa)
-    ) auto_increment 10;
+) auto_increment=10;
     
 create table dados_sensor( 
 	id_dados_sensor int auto_increment,
@@ -48,7 +48,8 @@ create table dados_sensor(
     fk_sensor int,
     foreign key(fk_sensor) references sensor(id_sensor),
     primary key(id_dados_sensor,fk_sensor)
-);
+)auto_increment=1;
+
 select * from cadastro_cliente;
 select * from dados_sensor;
 select * from estufa;
@@ -69,48 +70,52 @@ insert into cadastro_cliente values
 -- inserção de dados usuário
 insert into usuario values 
 (null, 'Miguel Nunes', 'saturno09', 'miguel.assuncao@bandtec.com.br', 100),
-(null, 'Bernardo Gadelha', 'pizza123', 'gadelha20bernardo@hotmail.com', 102),
-(null, 'Victor Veniti', 'sorvetedebaunilha', 'victor.veniti@gmail.com', 103),
-(null, 'Theo Souza', 'cinema2020', 'theo1209@gmail.com', 101),
-(null, 'Julia Mello', 'estrela10', 'juliamello@gmail.com', 105),
-(null, 'Larissa Lima', 'ih.larilarie', 'larissa.lima@bandtec.com.br', 104);
+(null, 'Bernardo Gadelha', 'pizza123', 'gadelha20bernardo@hotmail.com', 101),
+(null, 'Victor Veniti', 'sorvetedebaunilha', 'victor.veniti@gmail.com', 102),
+(null, 'Theo Souza', 'cinema2020', 'theo1209@gmail.com', 103),
+(null, 'Julia Mello', 'estrela10', 'juliamello@gmail.com', 104),
+(null, 'Larissa Lima', 'ih.larilarie', 'larissa.lima@bandtec.com.br', 105);
 
 -- inserção de dados estufa
 insert into estufa values
-(null, 'Estufa A', 'Alface', 105),
-(null, 'Estufa B', 'Alface', 101),
-(null, 'Estufa C', 'Tomate', 104),
+(null, 'Estufa A', 'Alface', 100),
+(null, 'Estufa B', 'Alface', 100),
+(null, 'Estufa C', 'Tomate', 101),
 (null, 'Estufa D', 'Alface', 102),
-(null, 'Estufa E', 'Tomate', 105),
+(null, 'Estufa E', 'Tomate', 103),
 (null, 'Estufa F', 'Alface', 103),
-(null, 'Estufa G', 'Tomate', 100);
+(null, 'Estufa G', 'Tomate', 103);
 
 -- inserção de dados sensor
 insert into sensor values
-(null, 'ativo', 05),
-(null, 'ativo', 03),
-(null, 'ativo', 07),
-(null, 'ativo', 02),
-(null, 'ativo', 04),
-(null, 'ativo', 07),
-(null, 'ativo', 01),
-(null, 'ativo', 06);
+(null, 'ativo', 1),
+(null, 'ativo', 2),
+(null, 'ativo', 3),
+(null, 'ativo', 4),
+(null, 'ativo', 5),
+(null, 'ativo', 6),
+(null, 'ativo', 6);
 
 -- Inserção de dados dados_sensor
 insert into dados_sensor values
-(null, '70','25','2020-9-15 19:16:53', 11),
-(null,'80','24','2020-9-15 19:29:36', 12),
-(null,'69','24','2020-9-15 18:21:23', 14),
+(null, '70','25','2020-9-15 19:16:53', 10),
+(null,'80','24','2020-9-15 19:29:36', 11),
+(null,'69','24','2020-9-15 18:21:23', 12),
 (null, '77','27','2020-9-15 17:32:36', 13),
-(null, '73','26','2020-9-15 16:11:41', 10),
-(null, '85','23','2020-9-15 13:45:36', 16),
-(null, '50','21','2020-9-15 12:02:16', 15),
-(null, '80','17','2020-9-15 11:31:36', 17);
+(null, '73','26','2020-9-15 16:11:41', 14),
+(null, '85','23','2020-9-15 13:45:36', 15),
+(null, '50','21','2020-9-15 12:02:16', 16),
+(null, '45', '18', '2020-10-26 15:00:19', 10);
 
 
 -- select * from cadastro_usuario;
 -- select * from sensor;
 -- select * from cadastro_usuario, sensor where fk_usuario=id_usuario;
 
-select * from cadastro_cliente,usuario,estufa,sensor,dados_sensor where 
-usuario.fk_cliente=cadastro_cliente.id_cliente and sensor.fk_estufa=estufa.id_estufa and dados_sensor.fk_sensor=sensor.id_sensor; 
+
+select sensor.status_sensor, dados_sensor.registro_umidade ,dados_sensor.registro_temp, 
+estufa.nome_estufa, cadastro_cliente.nome_razaoSocial
+from sensor, dados_sensor, estufa, cadastro_cliente
+where fk_sensor = id_sensor 
+and fk_estufa = id_estufa 
+and fk_cliente = id_cliente;
