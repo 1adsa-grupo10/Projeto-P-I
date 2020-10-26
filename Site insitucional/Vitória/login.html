@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Sensors</title>
+    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style_login.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -64,10 +66,11 @@
         cadastro1.style.display = 'none';
         login1.style.display = 'flex';
     }
+
     function entrar() {
         b_falha.innerHTML = '';
-        
-        if(in_email.value == 'miguel.assuncao@bandtec.com.br' && in_senha.value == 12345){
+
+        if (in_email.value == 'miguel.assuncao@bandtec.com.br' && in_senha.value == 12345) {
             window.location.href = 'x'
         } else {
             b_falha.innerHTML = 'Falha de autenticação!';
