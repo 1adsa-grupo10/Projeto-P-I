@@ -64,10 +64,13 @@
         cadastro1.style.display = 'none';
         login1.style.display = 'flex';
     }
+
     function entrar() {
         b_falha.innerHTML = '';
-        
-        if(in_email.value == 'miguel.assuncao@bandtec.com.br' && in_senha.value == 12345){
+
+        if (in_email.value == 'miguel.assuncao@bandtec.com.br' && in_senha.value == 12345) {
+            window.location.href = 'home.html'
+        } else if (in_email.value == 'vitoria.santos@bandtec.com.br' && in_senha.value == 'venus') {
             window.location.href = 'home.html'
         } else {
             b_falha.innerHTML = 'Falha de autenticação!';
