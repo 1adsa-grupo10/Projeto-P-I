@@ -1,6 +1,7 @@
 create database projeto_pi;
 use projeto_pi;
 
+
 create table cadastro_cliente(
 	id_cliente int primary key auto_increment,
 	nome_razaoSocial varchar(100) not null,
@@ -75,6 +76,7 @@ insert into usuario values
 (null, 'Larissa Lima', 'ih.larilarie', 'larissa.lima@bandtec.com.br', 104);
 
 -- inserção de dados estufa
+insert into estufa values
 (null, 'Estufa A', 'Alface', 105),
 (null, 'Estufa B', 'Alface', 101),
 (null, 'Estufa C', 'Tomate', 104),
@@ -84,6 +86,7 @@ insert into usuario values
 (null, 'Estufa G', 'Tomate', 100);
 
 -- inserção de dados sensor
+insert into sensor values
 (null, 'ativo', 05),
 (null, 'ativo', 03),
 (null, 'ativo', 07),
@@ -95,16 +98,19 @@ insert into usuario values
 
 -- Inserção de dados dados_sensor
 insert into dados_sensor values
-(null, '70%','25ºC','2020-9-15 19:16:53', 11),
-(null,'80%','24ºC','2020-9-15 19:29:36', 12),
-(null,'69%','24ºC','2020-9-15 18:21:23', 14),
-(null, '77%','27ºC','2020-9-15 17:32:36', 13),
-(null, '73%','26ºC','2020-9-15 16:11:41', 10),
-(null, '85%','23ºC','2020-9-15 13:45:36', 16),
-(null, '50%','21ºC','2020-9-15 12:02:16', 15),
-(null, '80%','17ºC','2020-9-15 11:31:36', 17);
+(null, '70','25','2020-9-15 19:16:53', 11),
+(null,'80','24','2020-9-15 19:29:36', 12),
+(null,'69','24','2020-9-15 18:21:23', 14),
+(null, '77','27','2020-9-15 17:32:36', 13),
+(null, '73','26','2020-9-15 16:11:41', 10),
+(null, '85','23','2020-9-15 13:45:36', 16),
+(null, '50','21','2020-9-15 12:02:16', 15),
+(null, '80','17','2020-9-15 11:31:36', 17);
 
 
 -- select * from cadastro_usuario;
 -- select * from sensor;
 -- select * from cadastro_usuario, sensor where fk_usuario=id_usuario;
+
+select * from cadastro_cliente,usuario,estufa,sensor,dados_sensor where 
+usuario.fk_cliente=cadastro_cliente.id_cliente and sensor.fk_estufa=estufa.id_estufa and dados_sensor.fk_sensor=sensor.id_sensor; 
