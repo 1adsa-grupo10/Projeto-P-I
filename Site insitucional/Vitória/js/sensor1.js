@@ -45,7 +45,7 @@ var configHumidity = {
         responsive: true,
         title: {
             display: true,
-            text: 'Histórico de Humidade',
+            text: 'Histórico de Umidade',
         },
         legend: {
             labels: {
