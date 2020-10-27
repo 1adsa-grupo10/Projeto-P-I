@@ -34,7 +34,7 @@ var configHumidity = {
     data: {
         labels: [],
         datasets: [{
-            label: 'Humidade',
+            label: 'Umidade',
             backgroundColor: window.chartColors.blue,
             borderColor: window.chartColors.blue,
             data: [],
@@ -45,7 +45,7 @@ var configHumidity = {
         responsive: true,
         title: {
             display: true,
-            text: 'Historico de Humidade',
+            text: 'Histórico de Humidade',
         },
         legend: {
             labels: {

@@ -34,7 +34,7 @@ var configTemperature = {
     data: {
         labels: [],
         datasets: [{
-            label: 'Temperature',
+            label: 'Temperatura',
             backgroundColor: window.chartColors.red,
             borderColor: window.chartColors.red,
             data: [],
@@ -45,7 +45,7 @@ var configTemperature = {
         responsive: true,
         title: {
             display: true,
-            text: 'Historico de Temperatura',
+            text: 'Histórico de Temperatura',
         },
         legend: {
             labels: {
