@@ -105,6 +105,28 @@ body {
     box-shadow: 5px 5px 14px 2px rgba(0, 0, 0, 0.75);
 }
 
+.seta {
+    margin-top: 30px;
+    animation: seta 1s infinite;
+    position: absolute;
+}
+
+.seta img {
+    height: 41px;
+}
+
+@keyframes seta {
+    0% {
+        bottom: 10vh;
+    }
+    50% {
+        bottom: 5vh;
+    }
+    100% {
+        bottom: 10vh;
+    }
+}
+
 .contato {
     display: flex;
     justify-content: space-evenly;
