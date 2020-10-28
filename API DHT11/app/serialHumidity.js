@@ -32,10 +32,10 @@ class NewArduinoHumidity {
     get CurrentHumity() {
         return this.currentHumity;
     }
-
+    
     SetConnection() {
         setInterval(() => {
-            let data_float = sensors.dht11({ minHum: 50, maxHum: 70, minTemp: 17, maxTemp: 29 });
+            let data_float = sensors.dht11({ minHum: 40, maxHum: 80, minTemp: 10, maxTemp: 40 });
 
             let current_temp = data_float[1].toFixed(2);
             let current_humity = data_float[0].toFixed(2);
