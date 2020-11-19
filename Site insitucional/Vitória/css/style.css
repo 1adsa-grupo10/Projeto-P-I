@@ -255,7 +255,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
+    height: 110vh;
 }
 
 .team-item {
@@ -375,16 +375,89 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
+.footer {
+    height: 35vh;
+    width: 100%;
+}
 
-/* .footer{
+.contato_footer {
+    height: 70%;
+    width: 100%;
+    background-color: black;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
-    height: 30vh;
-    border: 2px solid blue;
-  }
+    justify-content: space-around;
+}
 
-  .item-footer{
+.redes_sociais {
+    display: flex;
+}
 
-  } */
+.redes_sociais i {
+    color: rgb(122, 173, 112);
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+.site {
+    height: 30%;
+    width: 100%;
+    background-color: rgb(122, 173, 112);
+}
+
+.topicos ul {
+    display: flex;
+    align-items: center;
+}
+
+.topicos li {
+    list-style: none;
+    margin-left: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: rgb(122, 173, 112);
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.topicos a {
+    text-decoration: none;
+    color: rgb(122, 173, 112);
+}
+
+.topicos a {
+    text-decoration: none;
+    color: rgb(122, 173, 112);
+}
+
+.topicos li:hover {
+    color: white;
+}
+
+.topicos a:hover {
+    color: white;
+    transition: color 0.5s;
+}
+
+.novidades {
+    display: flex;
+}
+
+.novidades h2 {
+    color: rgb(122, 173, 112);
+    font-weight: 500;
+    font-size: 19px;
+    margin-right: 11px;
+}
+
+.novidades input {
+    height: 22px;
+    width: 167px;
+    outline: none;
+    border-radius: 7px;
+    border: 2px solid #282229;
+    background-color: #ffffff;
+}

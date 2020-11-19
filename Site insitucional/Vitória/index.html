@@ -7,6 +7,7 @@
     <title>Green Sensors</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1828e94103.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -20,7 +21,7 @@
                 <li>Quem somos?</li>
                 <li>Serviços</li>
                 <li><a href="./fale_conosco.html">Fale conosco</a></li>
-                <li class="login"><img src="./imagens/login.png" alt=""> <a href="./login.html">Login/Cadastro</a></li>
+                <li class="login"><img src="./imagens/login.png" alt=""><a href="./login.html">Login/Cadastro</a></li>
             </ul>
             <div class="bandeira">
                 <img src="./imagens/bandeira-brasil.png" alt="">
@@ -135,45 +136,54 @@
 
     </div>
 
-    <div class="contact">
-        <div class="contact-title">
-            <!--<h1>Receba Novidades</h1>-->
-        </div>
-        <div class="contact-item">
-            <div class="contact-info">
-                <h1>Contato</h1>
-                <p>11 2054-0569</p>
-                <p>contato@gmail.com</p>
-                <p>Jardim Paulista - SP</p>
+    <div class="footer">
+        <div class="contato_footer">
+            <div class="redes_sociais">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
             </div>
-            <!--<div class="contact-about">
-                <label>Digite seu E-mail</label>
-                <input>
-                <a>Enviar</a>
+            <div class="topicos">
+                <ul>
+                    <li>Home</li>
+                    <li>|</li>
+                    <li>Quem somos?</li>
+                    <li>|</li>
+                    <li>Serviços</li>
+                    <li>|</li>
+                    <li><a href="./fale_conosco.html">Fale conosco</a></li>
+                    <li>|</li>
+                    <li>Login/Cadastro</li>
+                </ul>
+            </div>
+            <div class="novidades">
+                <h2>Receba novidades</h2>
+                <form>
+                    <input type="email" placeholder="digite seu email">
+                    <button>Enviar</button>
+                </form>
             </div>
         </div>
-    </div>-->
+        <div class="site">
 
-            <!--  <div class="footer">
-          <div class="item-footer">
+        </div>
+    </div>
 
-          </div>
-      </div> -->
+    <!-- Importação do JQuery via servidor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-            <!-- Importação do JQuery via servidor -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-            <script>
-                jQuery(document).ready(function($) {
-                    //Efeito deslizante
-                    $("classe").click(function(event) {
-                        event.preventDefault();
-                        $('html,body').animate({
-                            scrollTop: $(this.hash).offset().top
-                        }, 3000);
-                    });
-                });
-            </script>
+    <script>
+        jQuery(document).ready(function($) {
+            //Efeito deslizante
+            $("classe").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 3000);
+            });
+        });
+    </script>
 
 </body>
 
