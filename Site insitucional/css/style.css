@@ -388,6 +388,12 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contato_footer i:hover {
+    color: white;
 }
 
 .redes_sociais {
@@ -398,12 +404,6 @@ p {
     color: rgb(122, 173, 112);
     font-size: 24px;
     margin: 0 5px;
-}
-
-.site {
-    height: 30%;
-    width: 100%;
-    background-color: rgb(122, 173, 112);
 }
 
 .topicos ul {
@@ -460,4 +460,33 @@ p {
     border-radius: 7px;
     border: 2px solid #282229;
     background-color: #ffffff;
+}
+
+.novidades button {
+    height: 26px;
+    width: 94px;
+    border-radius: 8px;
+    border: 2px solid black;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+}
+
+.novidades button:hover {
+    background-color: rgb(122, 173, 112);
+}
+
+.site {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 100%;
+    background-color: rgb(122, 173, 112);
+}
+
+.site h4 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
