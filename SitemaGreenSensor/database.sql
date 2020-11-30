@@ -35,3 +35,21 @@ create table estufa (
 	umidadeMinima int,
 	fklocalEstufa int foreign key references localEstufa(idLocalEstufa),
 );
+
+create table sensor(
+	idSensor int primary key identity(30000,1),
+	statusSensor varchar (40) check (statusSensor = 'Ativo' or statusSensor = 'Inativo' or statusSensor = 'Em manutenção'),
+	fkestufa int foreign key references estufa(idEstufa)  
+);
+create table dadosSensor (
+	idDadosSensor int primary key identity,
+	registroUmidade decimal (3,1),
+	registroTemperatura decimal (3,1),
+	fksensor int foreign key references sensor(idSensor)
+);
+create table acesso(
+    fkUsuario int foreign key references usuario(idusuario),
+    fkEstufa int foreign key references estufa(idestufa),
+    primary key(fkUsuario,fkEstufa),
+    cargo varchar(45)
+);
