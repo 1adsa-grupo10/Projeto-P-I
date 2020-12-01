@@ -238,3 +238,49 @@ body, html{
     color: white;
     font-weight: 700;
 }
+.modal-excluir{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -100%;
+    transition: all 0.5s;
+}
+.modalExcluir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30%;
+    width: 40%;
+    height: 40%;
+    background-color: #fff;
+    border-radius: 5px;
+    align-items: center;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.37);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.37);
+}
+.modalExcluir p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+#cancelaExcluir{
+    color: #27ae60;
+    border: 2px solid #27ae60;
+}
+#cancelaExcluir:hover{
+    color: white;
+    background: #27ae60;
+}
+#confirmaExcluir{
+    color: #d63031;
+    border: 2px solid #d63031;
+}
+#confirmaExcluir:hover{
+    color: white;
+    background: #ff7675;
+}
