@@ -6,8 +6,8 @@
 body {}
 
 .container {
-    height: 100vh;
-    width: 100vw;
+    height: 136vh;
+    width: 100%;
     background-image: url('../imagens/hidroponia.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -131,4 +131,120 @@ body {}
 .cadastro_icone {
     height: 100px;
     margin-bottom: 5px;
+}
+
+.footer {
+    height: 35vh;
+    width: 100%;
+}
+
+.contato_footer {
+    height: 70%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contato_footer i:hover {
+    color: white;
+}
+
+.redes_sociais {
+    display: flex;
+}
+
+.redes_sociais i {
+    color: rgb(122, 173, 112);
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+.topicos ul {
+    display: flex;
+    align-items: center;
+}
+
+.topicos li {
+    list-style: none;
+    margin-left: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: rgb(122, 173, 112);
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.topicos a {
+    text-decoration: none;
+    color: rgb(122, 173, 112);
+}
+
+.topicos a {
+    text-decoration: none;
+    color: rgb(122, 173, 112);
+}
+
+.topicos li:hover {
+    color: white;
+}
+
+.topicos a:hover {
+    color: white;
+    transition: color 0.5s;
+}
+
+.novidades {
+    display: flex;
+}
+
+.novidades h2 {
+    color: rgb(122, 173, 112);
+    font-weight: 500;
+    font-size: 19px;
+    margin-right: 11px;
+}
+
+.novidades input {
+    height: 22px;
+    width: 167px;
+    outline: none;
+    border-radius: 7px;
+    border: 2px solid #282229;
+    background-color: #ffffff;
+}
+
+.novidades button {
+    height: 26px;
+    width: 94px;
+    border-radius: 8px;
+    border: 2px solid black;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+}
+
+.novidades button:hover {
+    background-color: rgb(122, 173, 112);
+}
+
+.site {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 100%;
+    background-color: rgb(122, 173, 112);
+}
+
+.site h4 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
