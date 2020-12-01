@@ -7,8 +7,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <title>Home</title>
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="ccs/modal.css">
 </head>
 <body>
+
+        <div class="modal-editar">
+            <div class="modalEditar">
+                <div class="image">
+                    <img src="imagens/greenhouse2.svg">
+                </div>
+                <div class="formEstufa">
+                    <h3>Editar Estufa</h3>
+                    <form>
+                        <input type="text" placeholder="Tipo Cultura" value="Tomate">
+                        <input type="text" placeholder="Temperatura Maxima" value="35">
+                        <input type="text" placeholder="Temperatura Minima" value="18">
+                        <input type="text" placeholder="Umidade Minima" value="40">
+                        <input type="text" placeholder="Umidade Máxima" value="80">
+                        <input type="text" placeholder="Local Estufa" value="Fazenda">
+                        <button>Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
     <div class="container">
         <div class="navbar">
@@ -64,18 +85,7 @@
         </div>
     </div>
     
-    <script>
-    
-        function verificar(){
-            editar_estufa.style.display = "block";
-            excluir_estufa.style.display = "block";
-        }
-
-        function dash(){
-            window.href="dashboard.html";
-        }
-
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
