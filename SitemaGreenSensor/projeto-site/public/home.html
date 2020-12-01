@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +7,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <title>Home</title>
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="ccs/modal.css">
 </head>
-
 <body>
+
+        <div class="modal-editar">
+            <div class="modalEditar">
+                <div class="image">
+                    <img src="imagens/greenhouse2.svg">
+                </div>
+                <div class="formEstufa">
+                    <h3>Editar Estufa</h3>
+                    <form>
+                        <input type="text" placeholder="Tipo Cultura" value="Tomate">
+                        <input type="text" placeholder="Temperatura Maxima" value="35">
+                        <input type="text" placeholder="Temperatura Minima" value="18">
+                        <input type="text" placeholder="Umidade Minima" value="40">
+                        <input type="text" placeholder="Umidade Máxima" value="80">
+                        <input type="text" placeholder="Local Estufa" value="Fazenda">
+                        <button>Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-excluir">
+            <div class="modalExcluir">
+                <p>Deseja realmente excluir a estufa?</p>
+                <div class="btns">
+                    <a id="confirmaExcluir">Excluir Estufa</a>
+                    <a id="cancelaExcluir">Cancelar</a>
+                </div>
+            </div>
+        </div>
 
     <div class="container">
         <div class="navbar">
@@ -60,57 +89,13 @@
                         <p id="nome_estufa"><a href="dashboard.html"> Estufa S1</a></p>
                         <p id="local_estufa">Fazendo Bravo</p>
                     </div>
-
+                        
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        <div class="contato_footer">
-            <div class="redes_sociais">
-                <i class="fab fa-github"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-whatsapp"></i>
-            </div>
-            <div class="topicos">
-                <ul>
-                    <li>Home</li>
-                    <li>|</li>
-                    <li>Quem somos?</li>
-                    <li>|</li>
-                    <li>Serviços</li>
-                    <li>|</li>
-                    <li><a href="./fale_conosco.html">Fale conosco</a></li>
-                    <li>|</li>
-                    <li>Login/Cadastro</li>
-                </ul>
-            </div>
-            <div class="novidades">
-                <h2>Receba novidades</h2>
-                <form>
-                    <input type="email" placeholder="digite seu email">
-                    <button>Enviar</button>
-                </form>
-            </div>
-        </div>
-        <div class="site">
-            <h4>Green Sensors &COPY; 2020</h4>
-        </div>
-    </div>
-
-    <script>
-        function verificar() {
-            editar_estufa.style.display = "block";
-            excluir_estufa.style.display = "block";
-        }
-
-        function dash() {
-            window.href = "dashboard.html";
-        }
-    </script>
+    
+    <script src="js/script.js"></script>
 
 </body>
-
 </html>
