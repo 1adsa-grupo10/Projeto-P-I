@@ -58,6 +58,20 @@ body {}
     height: 80%;
 }
 
+.login form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.cadastro form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .login {
     height: 60%;
     display: flex;
