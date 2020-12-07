@@ -32,28 +32,30 @@
         </div>
         <div class="login_container">
             <div id="login1" class="login">
-
-                <img class="login_icone" src="./imagens/login.svg" alt="">
-                <input type="text" id="in_email" placeholder="CPF ou email">
-                <input type="password" id="in_senha" placeholder="Digite sua senha">
-                <b id="b_falha" style="color: red;"></b>
-                <button onclick="entrar()">Entrar</button>
-                <h3>Ainda não tem cadastro?</h3>
-                <a onclick="block()">Cadastrar</a>
-
+                <form id="formLogin" onsubmit="return logar()" method="post">
+                    <img class="login_icone" src="./imagens/login.svg" alt="">
+                    <input type="text" name="email_Login" id="in_email" placeholder="Email">
+                    <input type="password" name="senha_Login" id="in_senha" placeholder="Digite sua senha">
+                    <b id="b_falha" style="color: red;"></b>
+                    <button type="submit">Entrar</button>
+                    <h3>Ainda não tem cadastro?</h3>
+                    <a onclick="divCadastro()">Cadastrar</a>
+                </form>
 
             </div>
             <div id="cadastro1" class="cadastro" style="display: none;">
-
-                <img class="cadastro_icone" src="./imagens/cadastro.svg" alt="">
-                <input type="text" placeholder="Nome/Razão Social*">
-                <input type="text" placeholder="Email*">
-                <input type="text" placeholder="CPF/CNPJ*">
-                <input type="text" placeholder="Telefone*">
-                <input type="text" placeholder="Telefone Fixo">
-                <input type="password" placeholder="Senha*">
-                <input type="password" placeholder="Confirmação de senha*">
-                <button onclick="login()">Cadastrar</button>
+                <form id="formCadastrar" action="post" onsubmit="return cadastrar()">
+                    <img class="cadastro_icone" src="./imagens/cadastro.svg" alt="">
+                    <input type="text" name="nomeRazaoSocial" placeholder="Nome/Razão Social*">
+                    <input type="email" name="emailUsuario" placeholder="Email*">
+                    <input type="text" name="nomeUsuario" placeholder="Nome Usuario*">
+                    <input type="text" name="cpfCpnjCliente" placeholder="CPF/CNPJ*">
+                    <input type="text" name="telefoneCliente" placeholder="Telefone Fixo*">
+                    <input type="text" name="telefoneCelularCliente" placeholder="Telefone Celular*">
+                    <input type="password" name="senhaUsuario" placeholder="Senha*">
+                    <input type="password" id="senhaConfirma" placeholder="Confirmação de senha*">
+                    <button type="submit">Cadastrar</button>
+                </form>
 
             </div>
         </div>
@@ -100,18 +102,11 @@
 </body>
 
 </html>
+<script src="js/cadastrarCliente.js"></script>
+<script src="js/autenticarUsuario.js"></script>
 <script>
-    function block() {
-        cadastro1.style.display = 'flex';
-        login1.style.display = 'none';
-    }
-
-    function login() {
-        cadastro1.style.display = 'none';
-        login1.style.display = 'flex';
-    }
-
-    function entrar() {
+   
+    /* function entrar() {
         b_falha.innerHTML = '';
 
         if (in_email.value == 'miguel.assuncao@bandtec.com.br' && in_senha.value == 12345) {
@@ -121,5 +116,6 @@
         } else {
             b_falha.innerHTML = 'Falha de autenticação!';
         }
-    }
+    } */
+
 </script>
