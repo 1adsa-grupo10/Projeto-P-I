@@ -18,8 +18,7 @@
             <img src="./imagens/logo.png" alt="">
             <ul>
                 <li>Home</li>
-                <li>Quem somos?</li>
-                <li>Serviços</li>
+                <li onclick="quem_somos()">Quem somos?</li>
                 <li><a href="./fale_conosco.html">Fale conosco</a></li>
                 <li class="login"><img src="./imagens/login.png" alt=""><a href="./login.html">Login/Cadastro</a></li>
             </ul>
@@ -33,12 +32,12 @@
     <div class="fundo">
         <h1>O que é hidroponia?</h1>
         <p>Conheça essa nova forma de cultura</p> <br> <br>
-        <button>Saiba mais</button>
+        <button onclick="quem_somos()">Saiba mais</button>
         <div class="seta">
             <img src="./imagens/seta-para-baixo.svg" alt="">
         </div>
     </div>
-    <div class="info-container">
+    <div id="container_info" class="info-container">
         <div class="infos">
             <div class="info-title">
                 <img src="imagens/leaf.png" />
@@ -146,15 +145,17 @@
             </div>
             <div class="topicos">
                 <ul>
-                    <li>Home</li>
+                    <a href="index.html">
+                        <li>Home</li>
+                    </a>
                     <li>|</li>
-                    <li>Quem somos?</li>
-                    <li>|</li>
-                    <li>Serviços</li>
+                    <li onclick="quem_somos()">Quem somos?</li>
                     <li>|</li>
                     <li><a href="./fale_conosco.html">Fale conosco</a></li>
                     <li>|</li>
-                    <li>Login/Cadastro</li>
+                    <a href="login.html">
+                        <li>Login/Cadastro</li>
+                    </a>
                 </ul>
             </div>
             <div class="novidades">
@@ -185,6 +186,9 @@
         });
     </script>
 
+
+
 </body>
 
 </html>
+<script src="./js/script.js"></script>

@@ -4,22 +4,22 @@ let btnAbrirModalExcluir = document.getElementById("excluir_estufa");
 let btnFecharModalExcluir = document.querySelector(".modal-excluir");
 let btnCancelarExcluir = document.getElementById("cancelaExcluir");
 
-const abrirModalEditar = () =>{
+const abrirModalEditar = () => {
     document.querySelector("body").style.background = "rgba(0, 0, 0, 0.50)";
     document.querySelector(".modal-editar").style.top = "0";
 }
 
-const fecharModalEditar = () =>{
+const fecharModalEditar = () => {
     document.querySelector("body").style.background = "none";
     document.querySelector(".modal-editar").style.top = "-100%";
 }
 
-const abrirModalExcluir = () =>{
+const abrirModalExcluir = () => {
     document.querySelector("body").style.background = "rgba(0, 0, 0, 0.50)";
     document.querySelector(".modal-excluir").style.bottom = "0";
 }
 
-const fecharModalExcluir = () =>{
+const fecharModalExcluir = () => {
     document.querySelector("body").style.background = "none";
     document.querySelector(".modal-excluir").style.bottom = "-100%";
 }
@@ -31,11 +31,15 @@ btnFecharModalExcluir.addEventListener('click', fecharModalExcluir);
 btnCancelarExcluir.addEventListener('click', fecharModalExcluir);
 
 
-function verificar(){
+function verificar() {
     editar_estufa.style.display = "block";
     excluir_estufa.style.display = "block";
 }
 
-function dash(){
-    window.href="dashboard.html";
+function dash() {
+    window.href = "dashboard.html";
+}
+
+function quem_somos() {
+    window.location.href = "index.html#container_info";
 }

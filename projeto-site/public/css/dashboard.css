@@ -34,6 +34,7 @@ body {
 }
 
 .coluna_1-title {
+    border: 2px solid black;
     width: 95%;
     height: 30%;
     /* background-color: #4cd137; */
@@ -56,6 +57,7 @@ body {
 }
 
 .coluna_1-item {
+    border: 2px solid black;
     width: 95%;
     height: 15%;
     background: white;
@@ -80,6 +82,7 @@ body {
 }
 
 .grafico {
+    border: 2px solid black;
     background: white;
     color: rgb(108, 172, 231);
     color: linear-gradient(90deg, rgba(108, 172, 231, 1) 0%, rgba(164, 246, 208, 1) 100%, rgba(32, 136, 252, 1) 100%);
@@ -88,9 +91,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-box-shadow: 18px 15px 10px 1px rgba(0, 0, 0, 0.79);
-    -moz-box-shadow: 18px 15px 10px 1px rgba(0, 0, 0, 0.79);
-    box-shadow: 18px 15px 10px 1px rgba(0, 0, 0, 0.79);
+    -webkit-box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.79);
+    -moz-box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.79);
+    box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.79);
 }
 
 .valores {
@@ -118,6 +121,7 @@ body {
 }
 
 .ratio1 {
+    border: 2px solid black;
     width: 100%;
     height: 45%;
     background: white;
@@ -137,6 +141,7 @@ body {
 }
 
 .ratio2 {
+    border: 2px solid black;
     width: 100%;
     height: 45%;
     background: white;
@@ -165,8 +170,10 @@ body {
 }
 
 .primeiro {
+    border: 2px solid black;
     height: 45%;
     width: 100%;
+    margin-top: 3%;
     background: white;
     display: flex;
     justify-content: center;
@@ -177,6 +184,7 @@ body {
 }
 
 .segundo {
+    border: 2px solid black;
     height: 45%;
     width: 100%;
     background: white;
