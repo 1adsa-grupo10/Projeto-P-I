@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <title>Estufa</title>
-    <link rel="stylesheet" href="./css/pag-estufa-style.css">
+    <title>Endereço</title>
+    <link rel="stylesheet" href="./css/pag-local-estufa.css">
 </head>
 <body>
 
@@ -40,47 +40,40 @@
         </div>
         <div class="info">
             <div class="info-title">
-                <h1>Crie suas estufas</h1>
+                <h1>Informe o endereço da(s) sua(s) estufa(s)</h1>
             </div>
             <div class="info-detalhes">
                 <div class="title">
-                    <h1>Adicione suas estufas</h1>
-                    <p>Insira os dados das estufas</p>
+                    <h1>Adicione o local da(s) sua(s) estufa(s)</h1>
+                    <p>Insira o local da(s) estufa(s)</p>
                 </div>
-                <div class="estufas">
+                <div class="local">
 
-                    <div class="item-estufas">
+                    <div class="item-local">
                         
-                        <img id="img_nova_estufa" src="./imagens/addestufa.png" onclick="exibir()">
-                        <p id="p_text_nova_estufa">Nova Estufa</p>
+                        <img id="img_nova_local" src="./imagens/addestufa.png" onclick="exibir()">
+                        <p id="p_text_novo_local">Novo local</p>
                         
-                        <form id="form_cadastro_estufa" method="post" >
-                            <p>Dados da nova estufa</p> <br>
+                        <form id="form_cadastro_local" method="post" >
+                            <p>Endereço da estufa</p> <br>
 
-                            Nome <br>
-                            <input type="text" name="nomeEstufa" minlength="2"> <br>
+                            Logradouro <br>
+                            <input type="text" name="logradouro" minlength="2"> <br>
 
-                            Tipo de cultura <br>
-                            <input type="text" name="cultura" min="3"> <br>
+                            Número <br>
+                            <input type="text" name="numero" min="3"> <br>
 
-                            Têmperatura máxima(°C) <br>
-                            <input type="text" name="tempMax" minlength="2"> <br>
+                            Bairro <br>
+                            <input type="text" name="bairro"  minlength="2"> <br>
 
-                            Têmperatura mínima(°C) <br>
-                            <input type="text" name="tempMin" minlength="2"> <br>
+                            Cidade <br>
+                            <input type="text" name="cidade" minlength="2"> <br>
 
-                            Umidade máxima(%) <br>
-                            <input type="text" name="umidMax" minlength="2"> <br>
+                            CEP <br>
+                            <input type="text" name="cep" minlength="2"> <br>
 
-                            Umidade mínima(%) <br>
-                            <input type="text" name="umidMin" minlength="2"> <br>
-
-                            <select id="sel_local">
-                                <option value="">Selecione o local da estufa</option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                            </select> <br>
+                            Complemento <br>
+                            <input type="text" name="complemento" minlength="2"> <br>
                             
                             <button onclick="cadastrar()">Cadastrar</button>
                         </form>                                               
@@ -97,9 +90,9 @@
         // }
 
         function exibir(){
-            form_cadastro_estufa.style.display = 'block'
-            img_nova_estufa.style.display = 'none'
-            p_text_nova_estufa.style.display = 'none'
+            form_cadastro_local.style.display = 'block'
+            img_nova_local.style.display = 'none'
+            p_text_novo_local.style.display = 'none'
         }
 
         function dash(){
