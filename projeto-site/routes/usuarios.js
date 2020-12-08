@@ -148,7 +148,7 @@ router.get('/sair/:email', function(req, res, next) {
         }
     }
     sessoes = nova_sessoes;
-    res.send(`Sessão do usuário ${login} finalizada com sucesso!`);
+    res.send(`Sessão do usuário ${email} finalizada com sucesso!`);
 });
 
 

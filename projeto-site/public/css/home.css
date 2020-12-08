@@ -85,6 +85,12 @@ body, html{
     line-height: 70px;
     font-size: 20px;
 }
+/* #title-contem{
+    display: none;
+}
+#desc-contem{
+    display: none;
+} */
 .btns{
     display: flex;
     flex-direction: row;
@@ -126,9 +132,19 @@ body, html{
     color: white;
     background: #ff7675;
 }
+.nao-encontrado{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.nao-encontrado img{
+    width: 30%;
+}
 .estufas{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     height: 100%;
 }
