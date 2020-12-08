@@ -97,7 +97,7 @@
     transition: background 0.5s;
     margin-right: 25px;
 }
-#criar_estufa{
+/* #criar_estufa{
     color: #00b894;
     border: 2px solid #00b894;
 }
@@ -122,7 +122,7 @@
 #excluir_estufa:hover{
     color: white;
     background: #ff7675;
-}
+} */
 .estufas{
     display: flex;
     flex-direction: row;

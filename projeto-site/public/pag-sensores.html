@@ -8,9 +8,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <title>Estufa</title>
     <link rel="stylesheet" href="./css/pag-sensores-style.css">
+    <!-- <link rel="stylesheet" href="css/home.css"> -->
+    <!-- <link rel="stylesheet" href="ccs/modal.css"> -->
 </head>
 
 <body>
+    <div class="modal-editar">
+        <div class="modalEditar">
+            <div class="image">
+                <img src="imagens/measurement.png">
+            </div>
+            <div class="formEstufa">
+                <h3>Detalhes do sensor</h3>
+                <form>
+                    <input type="text" placeholder="Cultura" value="Tomate">
+                    <input type="text" placeholder="Estufa" value="A5">
+                    <input type="text" placeholder="Status" value="Ativo">
+                    <input type="text" placeholder="Umidade Máxima" value="70%">
+                    <input type="text" placeholder="Umidade Mínima" value="60%">
+                    <input type="text" placeholder="Tempêratura Máxima" value="27º">
+                    <input type="text" placeholder="Tempêratura Mínima" value="25º">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-excluir">
+        <div class="modalExcluir">
+            <p>Deseja realmente excluir o sensor?</p>
+            <div class="btns">
+                <a id="confirmaExcluir">Excluir Sensor</a>
+                <a id="cancelaExcluir">Cancelar</a>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="navbar">
@@ -51,23 +82,31 @@
             </div>
             <div class="estufas">
                 <div class="divisao_div">
-                    <div class="base_sensores"><img src="./imagens/measurement.png">
-                        <h2>Ativo</h2>
+                    <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
+                        <h2 >Ativo</h2>
                         <h2>Estufa: A4</h2>
+                        <!-- <button id="editar_sensor">Editar</button> -->
+                        <button onclick="abrirModalEditar()">Ver detalhes</button>
+                        
+                        
+                        <b></b>
                     </div>
-                    <div class="base_sensores"><img src="./imagens/measurement.png">
+                    <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
                         <H2>Manutenção</H2>
                         <h2>Estufa: DD4</h2>
+                        <button onclick="abrirModalEditar()">Ver detalhes</button>
                     </div>
                 </div>
                 <div class="divisao_div">
-                    <div class="base_sensores"><img src="./imagens/measurement.png">
-                        <h2>Desativo</h2>
+                    <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
+                        <h2>Inativo</h2>
                         <h2>Estufa: B3</h2>
+                        <button onclick="abrirModalEditar()">Ver detalhes</button>
                     </div>
-                    <div class="base_sensores"><img src="./imagens/measurement.png">
+                    <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
                         <h2>Ativo</h2>
                         <h2>Estufa: S2</h2>
+                        <button onclick="abrirModalEditar()">Ver detalhes</button>
                     </div>
                 </div>
             </div>
@@ -76,8 +115,8 @@
 
     </div>
 
+    <script src="js/script2.js"></script>
 
     <script src="js/verificacoes.js"></script>
 </body>
-
 </html>
