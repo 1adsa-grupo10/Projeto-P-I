@@ -74,17 +74,17 @@ body {}
 }
 
 .cadastro {
-    height: 80%;
+    height: 86%;
 }
 
-.login form{
+.login form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column
 }
 
-.cadastro form{
+.cadastro form {
     display: flex;
     justify-content: center;
     align-items: center;

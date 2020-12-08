@@ -49,10 +49,12 @@
                     <img src="./imagens/perfil.png" alt="">
                 </div>
                 <div class="perfil_content">
-                    <input type="text" placeholder="Nome completo">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Senha">
-                    <button>Atualizar</button>
+                    <form id="form_perfil" onsubmit="return atualizar()">
+                        <input id="in_nome" name="in_nome" type="text" placeholder="Nome completo">
+                        <input id="in_email" name="in_email" type="email" placeholder="Email">
+                        <input id="in_senha" name="in_senha" type="password" placeholder="Senha">
+                        <button>Atualizar</button>
+                    </form>
                 </div>
             </div>
 
@@ -62,3 +64,43 @@
 </body>
 
 </html>
+
+<script>
+    var id = sessionStorage.idUsuario;
+    fetch(`/usuarios/atualizar_perfil/${id}`).then(resposta => {
+        if (resposta.ok) {
+            resposta.json().then(dados => {
+                in_nome.value = dados.nomeUsuario
+                in_email.value = dados.emailusuario
+                in_senha.value = dados.senhaUsuario
+            })
+        }
+    });
+
+    function atualizar() {
+        var formulario = new URLSearchParams(new FormData(form_perfil));
+        fetch(`/usuarios/alterar_dados/${id}`, {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+                console.log('Usuário atualizado com sucesso')
+
+                resposta.json().then(json => {
+                    sessionStorage.idUsuario = json.idUsuario;
+                    sessionStorage.emailUsuario = json.emailusuario;
+                    sessionStorage.fkCliente = json.fkcliente;
+                    window.location = "pag-perfil.html";
+                    /* console.log(json); */
+                });
+            } else {
+                alert('Erro de atualização. Tente novamente.')
+                resposta.text().then(texto => {
+                    console.error(texto);
+                })
+            }
+
+        });
+    }
+</script>
