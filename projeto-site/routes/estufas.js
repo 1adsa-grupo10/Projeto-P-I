@@ -25,4 +25,20 @@ router.get('/estufas-usuario/:fkUsuario', (req, res, next) =>{
 
 });
 
+router.get('/estufa-detalhe/:idEstufa', (req, res, next) =>{
+    console.log("Recuperando dados de uma Estufa...");
+
+    var idEstufa = req.params.idEstufa;
+
+    let instrucaoSql = `select * from estufa where idEstufa = ${idEstufa}`;
+
+    sequelize.query(instrucaoSql, {
+        model: Estufa
+    }).then(resultado =>{
+        console.log(`Estufas encontradas : ${resultado.length}`);
+        res.json(resultado[0]);
+    });
+
+});
+
 module.exports = router;
