@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios');
 var leiturasRouter = require('./routes/leituras');
 var estufasRouter = require('./routes/estufas');
+var sensorRouter = require('./routes/sensores')
 
 var app = express();
 
@@ -22,5 +23,6 @@ app.use('/', indexRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/leituras', leiturasRouter);
 app.use('/estufas', estufasRouter);
+app.use('/sensores',sensorRouter);
 
 module.exports = app;

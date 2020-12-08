@@ -21,13 +21,12 @@
             <div class="formEstufa">
                 <h3>Detalhes do sensor</h3>
                 <form>
-                    <input type="text" placeholder="Cultura" value="Tomate">
-                    <input type="text" placeholder="Estufa" value="A5">
-                    <input type="text" placeholder="Status" value="Ativo">
-                    <input type="text" placeholder="Umidade Máxima" value="70%">
-                    <input type="text" placeholder="Umidade Mínima" value="60%">
-                    <input type="text" placeholder="Tempêratura Máxima" value="27º">
-                    <input type="text" placeholder="Tempêratura Mínima" value="25º">
+                    <input type="text" id="estufaTipoCultura" placeholder="Cultura">
+                    <input type="text" id="statusSensor" placeholder="Status">
+                    <input type="text" id="umiMax" placeholder="Umidade Máxima">
+                    <input type="text" id="umiMin" placeholder="Umidade Mínima">
+                    <input type="text" id="tempMaxima" placeholder="Tempêratura Máxima">
+                    <input type="text" id="tempMin" placeholder="Tempêratura Mínima">
                 </form>
             </div>
         </div>
@@ -82,22 +81,22 @@
             </div>
             <div class="estufas">
                 <div class="divisao_div">
-                    <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
+                    <div class="base_sensores"><img onclick="carregarDados(30000)" src="./imagens/measurement.png">
                         <h2 >Ativo</h2>
                         <h2>Estufa: A4</h2>
                         <!-- <button id="editar_sensor">Editar</button> -->
-                        <button onclick="abrirModalEditar()">Ver detalhes</button>
+                        <button onclick="carregarDados(30000)">Ver detalhes</button>
                         
                         
                         <b></b>
                     </div>
-                    <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
+                    <div class="base_sensores"><img onclick="carregarDados(30002)" src="./imagens/measurement.png">
                         <H2>Manutenção</H2>
                         <h2>Estufa: DD4</h2>
-                        <button onclick="abrirModalEditar()">Ver detalhes</button>
+                        <button onclick="carregarDados(30002)">Ver detalhes</button>
                     </div>
                 </div>
-                <div class="divisao_div">
+                <!-- <div class="divisao_div">
                     <div class="base_sensores"><img onclick="abrirModalEditar()" src="./imagens/measurement.png">
                         <h2>Inativo</h2>
                         <h2>Estufa: B3</h2>
@@ -108,7 +107,7 @@
                         <h2>Estufa: S2</h2>
                         <button onclick="abrirModalEditar()">Ver detalhes</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -118,5 +117,25 @@
     <script src="js/script2.js"></script>
 
     <script src="js/verificacoes.js"></script>
+    <!-- <script src="js/verificarEstufas.js"></script> -->
 </body>
 </html>
+<script>
+    
+    function carregarDados(idSensor){
+        fetch(`/sensores/sensores-detalhe/${idSensor}`).then(resposta =>{
+            if(resposta.ok){
+                resposta.json().then(dados =>{
+                    abrirModalEditar();
+                    estufaTipoCultura.value = dados.tipoCultura;
+                    statusSensor.value = dados.statusSensor;
+                    tempMaxima.value = dados.temperaturaMaxima;
+                    tempMin.value = dados.temperaturaMinima;
+                    umiMax.value = dados.umidadeMaxima;
+                    umiMin.value = dados.umidadeMinima;
+                })
+            }
+        })
+    }
+    
+</script>
