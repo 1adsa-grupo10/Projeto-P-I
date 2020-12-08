@@ -83,14 +83,10 @@ const Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
 db.conectar()
     .then(() => {
         const sql = `
-        INSERT into dbo.leitura (temperatura, umidade, momento, idcaminhao)
-        values (${temperature+10}, ${Humidity+20}, '${agora()}', 1);
-        INSERT into dbo.leitura (temperatura, umidade, momento, idcaminhao)
-        values (${temperature-10}, ${Humidity+20}, '${agora()}', 2);
-        INSERT into dbo.leitura (temperatura, umidade, momento, idcaminhao)
-        values (${temperature+5}, ${Humidity-20}, '${agora()}', 3);
-        INSERT into dbo.leitura (temperatura, umidade, momento, idcaminhao)
-        values (${temperature-5}, ${Humidity-20}, '${agora()}', 4);`;
+        INSERT into dadosSensor (registroUmidade, registroTemperatura, dataHora, fksensor)
+        values (${Humidity+5}, ${temperature+2}, '${agora()}', 30000);
+        INSERT into dadosSensor (registroUmidade, registroTemperatura, dataHora, fksensor)
+        values (${Humidity+2}, ${temperature-5}, '${agora()}', 30002);`;
         console.log(sql);
     return db.sql.query(sql).then(()=>{
         console.log("Registro inserido com sucesso! \n");

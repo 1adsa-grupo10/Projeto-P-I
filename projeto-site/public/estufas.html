@@ -60,7 +60,7 @@
             <div class="div_estufas">
                 <div class="separarestufa">
                     <div class="div_estufa">
-                        <h4>Estufa <span name="namecaminhao" id="idcaminhao" value="1">1</span></h4>
+                        <h4>Estufa <span name="estufaNome" id="idestufa" value="8000">1</span></h4>
                         <div class="valores">
                             <div class="valor" id="div_temperatura">Temperatura sendo obtida...</div><br>
                             <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="div_estufa">
-                        <h4>Estufa <span name="namecaminhao" id="idcaminhao" value="2">2</span></h4>
+                        <h4>Estufa <span name="estufaNome" id="idestufa" value="8005">2</span></h4>
                         <div class="valores">
                             <div class="valor" id="div_temperatura2">Temperatura sendo obtida...</div><br>
                             <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="separarestufa">
+                <!-- <div class="separarestufa">
                     <div class="div_estufa">
                         <h4>Estufa <span name="namecaminhao" id="idcaminhao" value="3">3</span></h4>
                         <div class="valores">
@@ -109,7 +109,7 @@
                             <div class="alerta" id="div_alerta_temperatura4"></div>
                             <div class="alerta_umidd" id="div_alerta_umidade4"></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -122,153 +122,3 @@
 
 <script src="js/verificacoes.js"></script>
 <script src="js/estatisticas.js"></script>
-<!--JAVASCRIPT-->
-<script>
-
-    let usuario;
-
-    verificar_autenticacao();
-
-    // só mexer se quiser alterar o tempo de atualização
-    // ou se souber o que está fazendo!
-    function atualizacaoPeriodica() {
-        obterdadosporcaminhao(1);
-        obterdadosporcaminhao(2);
-        obterdadosporcaminhao(3);
-        obterdadosporcaminhao(4);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
-
-
-
-    function obterdadosporcaminhao(idcaminhao) {
-        //aguardar();
-        fetch(`/leituras/tempo-real/${idcaminhao}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        // aqui, após registro. use os nomes 
-                        // dos atributos que vem no JSON 
-                        var dados = {
-                            temperatura: resposta.temperatura,
-                            umidade: resposta.umidade
-                        }
-
-                        alertar(resposta.temperatura, resposta.umidade, idcaminhao);
-                        atualizarTela(dados, idcaminhao);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do caminhao p/ gráfico: ${error.message}`);
-            });
-    }
-
-    function alertar(temperatura, umidade, idcaminhao) {
-        // padrão para meu alerta
-        var limites = {
-            max_temperatura: 40,
-            min_temperatura: 20,
-            max_umidade: 80,
-            min_umidade: 50,
-        };
-
-        // zerar aviso de mensagem
-        var mensagem_temperatura = '';
-        var mensagem_umidade = '';
-        var classe_temperatura = 'alerta';
-        var classe_umidade = 'alerta_umidd';
-
-        // comparando
-        if (temperatura > limites.max_temperatura) {
-            mensagem_temperatura += 'Temperatura alta demais! <br>';
-            classe_temperatura = 'alerta alerta-alto';
-        }
-        if (umidade > limites.max_umidade) {
-            mensagem_umidade += 'Umidade alta demais! <br>';
-            classe_umidade = 'alerta_umidd alerta-alto';
-        }
-        if (temperatura < limites.min_temperatura) {
-            mensagem_temperatura = 'Temperatura baixa demais! <br>';
-            classe_temperatura = 'alerta alerta-baixo';
-        }
-        if (umidade < limites.min_umidade) {
-            mensagem_umidade = 'Umidade baixa demais! <br>';
-            classe_umidade = 'alerta_umidd alerta-baixo';
-        }
-
-        // escolhendo qual alterar
-        var div_temperatura_alterar
-        var div_umidade_alterar
-
-        if (idcaminhao == 1) {
-            div_temperatura_alterar = div_alerta_temperatura
-            div_umidade_alterar = div_alerta_umidade
-        } else if (idcaminhao == 2) {
-            div_temperatura_alterar = div_alerta_temperatura2
-            div_umidade_alterar = div_alerta_umidade2
-        } else if (idcaminhao == 3) {
-            div_temperatura_alterar = div_alerta_temperatura3
-            div_umidade_alterar = div_alerta_umidade3
-        } else if (idcaminhao == 4) {
-            div_temperatura_alterar = div_alerta_temperatura4
-            div_umidade_alterar = div_alerta_umidade4
-        }
-
-        // alterando
-        div_temperatura_alterar.innerHTML = mensagem_temperatura;
-        div_temperatura_alterar.className = classe_temperatura;
-
-        div_umidade_alterar.innerHTML = mensagem_umidade;
-        div_umidade_alterar.className = classe_umidade;
-    }
-
-    // só altere aqui se souber o que está fazendo!
-    function atualizarTela(dados, idcaminhao) {
-        console.log('iniciando atualização da tela...');
-
-        // escolhendo qual alterar
-        var div_temperatura_alterar
-        var div_umidade_alterar
-
-        if (idcaminhao == 1) {
-            div_temperatura_alterar = div_temperatura
-            div_umidade_alterar = div_umidade
-        } else if (idcaminhao == 2) {
-            div_temperatura_alterar = div_temperatura2
-            div_umidade_alterar = div_umidade2
-        } else if (idcaminhao == 3) {
-            div_temperatura_alterar = div_temperatura3
-            div_umidade_alterar = div_umidade3
-        } else if (idcaminhao == 4) {
-            div_temperatura_alterar = div_temperatura4
-            div_umidade_alterar = div_umidade4
-        }
-
-        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
-
-        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`;
-
-
-
-    }
-
-
-    /* function sendData() {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:9000/api/sendData', false);
-        http.send(null);
-    }
-
-    setInterval(() => {
-        sendData();
-    }, 5000); */
-
-</script>

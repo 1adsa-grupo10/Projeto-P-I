@@ -4,23 +4,16 @@ var sequelize = require('../models').sequelize;
 var Leitura = require('../models').Leitura;
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas/:idcaminhao', function(req, res, next) {
+router.get('/ultimas/:fkSensor', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 8 está bom?
-	const limite_linhas = 7;
+	const limite_linhas = 3;
 
-	var idcaminhao = req.params.idcaminhao;
+	var fkSensor = req.params.fkSensor;
 
 	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
 	
-	const instrucaoSql = `select top ${limite_linhas} 
-						temperatura, 
-						umidade, 
-						momento,
-						FORMAT(momento,'HH:mm:ss') as momento_grafico
-						from leitura
-						where idcaminhao = ${idcaminhao}
-						order by id desc`;
+	const instrucaoSql = `select top ${limite_linhas} registroUmidade, registroTemperatura, FORMAT(dataHora,'HH:mm:ss') as momento_grafico, fksensor from dadosSensor where fksensor = ${fkSensor} order by idDadosSensor desc`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
@@ -54,13 +47,13 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 });
 */
 
-router.get('/tempo-real/:idcaminhao', function(req, res, next) {
-	console.log('Recuperando caminhões');
+router.get('/tempo-real/:fkSensor', function(req, res, next) {
+	console.log('Recuperando Sensores');
 
 	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idcaminhao = req.params.idcaminhao;
+	var fkSensor = req.params.fkSensor;
 
-	let instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, idcaminhao from leitura where idcaminhao = ${idcaminhao} order by id desc`;
+	let instrucaoSql = `select top 1 registroUmidade, registroTemperatura, FORMAT(dataHora,'HH:mm:ss') as momento_grafico, fksensor from dadosSensor where fksensor = ${fkSensor} order by idDadosSensor desc`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
