@@ -155,15 +155,86 @@ function atualizarGrafico(idSensor, dadosTemp, dadosUmi){
                 dadosTemp.labels.shift();
                 dadosTemp.labels.push(novoRegistro.momento_grafico);
                 dadosTemp.datasets[0].data.shift();
-                dadosTemp.datasets[0].data.push(novoRegistro.registroTemperatura);
+                dadosTemp.datasets[0].data.push(novoRegistro.registroTemperatura);             
 
                 dadosUmi.labels.shift();
                 dadosUmi.labels.push(novoRegistro.momento_grafico);
                 dadosUmi.datasets[0].data.shift();
                 dadosUmi.datasets[0].data.push(novoRegistro.registroUmidade);
 
-                currentUmitity.innerHTML = `${novoRegistro.registroUmidade}%`;
-                currentTemperature.innerHTML = `${novoRegistro.registroTemperatura}ºC`;
+                var cor_alertaTemp = '';
+                var cor_alertaUmid = '';
+                
+
+                if(idSensor == 30000){
+                    if(novoRegistro.registroTemperatura <= 12){
+                        cor_alertaTemp = 'darkblue';
+                    } else if(novoRegistro.registroTemperatura <= 14){
+                        cor_alertaTemp = 'blue';
+                    } else if(novoRegistro.registroTemperatura <= 16){
+                        cor_alertaTemp = 'royalblue';
+                    } else if(novoRegistro.registroTemperatura < 32){
+                        cor_alertaTemp = 'green';
+                    } else if(novoRegistro.registroTemperatura < 34){
+                        cor_alertaTemp = 'yellow';
+                    } else if(novoRegistro.registroTemperatura < 35){
+                        cor_alertaTemp = 'orange';
+                    } else {
+                        cor_alertaTemp = 'red';
+                    }
+                    if(novoRegistro.registroUmidade <= 42){
+                        cor_alertaUmid = 'darkblue';
+                    } else if(novoRegistro.registroUmidade <= 45){
+                        cor_alertaUmid = 'blue';
+                    } else if(novoRegistro.registroUmidade <= 48){
+                        cor_alertaUmid = 'royalblue';
+                    } else if(novoRegistro.registroUmidade < 73){
+                        cor_alertaUmid = 'green';
+                    } else if(novoRegistro.registroUmidade < 75){
+                        cor_alertaUmid = 'yellow';
+                    } else if(novoRegistro.registroUmidade < 78){
+                        cor_alertaUmid = 'orange';
+                    } else {
+                        cor_alertaUmid = 'red';
+                    }
+                }
+
+                if(idSensor == 30002){
+                    if(novoRegistro.registroTemperatura <= 15){
+                        cor_alertaTemp = 'darkblue';
+                    } else if(novoRegistro.registroTemperatura <= 18){
+                        cor_alertaTemp = 'blue';
+                    } else if(novoRegistro.registroTemperatura <= 20){
+                        cor_alertaTemp = 'royalblue';
+                    } else if(novoRegistro.registroTemperatura < 29){
+                        cor_alertaTemp = 'green';
+                    } else if(novoRegistro.registroTemperatura < 31){
+                        cor_alertaTemp = 'yellow';
+                    } else if(novoRegistro.registroTemperatura < 33){
+                        cor_alertaTemp = 'orange';
+                    } else {
+                        cor_alertaTemp = 'red';
+                    }
+                    if(novoRegistro.registroUmidade <= 55){
+                        cor_alertaUmid = 'darkblue';
+                    } else if(novoRegistro.registroUmidade <= 60){
+                        cor_alertaUmid = 'blue';
+                    } else if(novoRegistro.registroUmidade <= 65){
+                        cor_alertaUmid = 'royalblue';
+                    } else if(novoRegistro.registroUmidade < 74){
+                        cor_alertaUmid = 'green';
+                    } else if(novoRegistro.registroUmidade < 76){
+                        cor_alertaUmid = 'yellow';
+                    } else if(novoRegistro.registroUmidade < 80){
+                        cor_alertaUmid = 'orange';
+                    } else {
+                        cor_alertaUmid = 'red';
+                    }
+                }
+                
+
+                currentUmitity.innerHTML = `<span style='color: ${cor_alertaUmid}'>${novoRegistro.registroUmidade}% </span>`;
+                currentTemperature.innerHTML = `<span style='color: ${cor_alertaTemp}'>${novoRegistro.registroTemperatura}ºC </span>`;
 
                 window.graficoLinhaTemp.update();
                 window.graficoLinhaUmi.update();
