@@ -7,6 +7,22 @@ body {
     height: 100vh;
 }
 
+
+/* width */
+
+* ::-webkit-scrollbar {
+    width: 8px;
+    background: #1C1C1C;
+}
+
+
+/* handle */
+
+* ::-webkit-scrollbar-thumb {
+    background: #51d9ba;
+    border-radius: 5px;
+}
+
 .navbar {
     background-color: white;
     height: 70px;
