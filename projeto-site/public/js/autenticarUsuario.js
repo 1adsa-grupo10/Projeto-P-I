@@ -23,10 +23,11 @@ function logar(){
                     /* console.log(json); */
                 });
             }else{
-                console.log("Erro do Login!");
+                console.log('Erro de Login');
                 
                 resposta.text().then(texto =>{
                     console.error(texto);
+                    alert(texto);
                 })
             }
 

@@ -86,12 +86,17 @@
 
             if (resposta.ok) {
                 console.log('Usuário atualizado com sucesso')
+                alert("Usuário atualizado com sucesso");
 
+                sessionStorage.clear();
+                
                 resposta.json().then(json => {
                     sessionStorage.idUsuario = json.idUsuario;
                     sessionStorage.emailUsuario = json.emailusuario;
                     sessionStorage.fkCliente = json.fkcliente;
-                    window.location = "pag-perfil.html";
+                    
+                    
+                    /* window.location = "pag-perfil.html"; */
                     /* console.log(json); */
                 });
             } else {
@@ -102,5 +107,6 @@
             }
 
         });
+        return false;
     }
 </script>

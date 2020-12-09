@@ -7,7 +7,7 @@ var Leitura = require('../models').Leitura;
 router.get('/ultimas/:fkSensor', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 8 está bom?
-	const limite_linhas = 3;
+	const limite_linhas = 6;
 
 	var fkSensor = req.params.fkSensor;
 

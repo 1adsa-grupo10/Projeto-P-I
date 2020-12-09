@@ -104,8 +104,11 @@ response.sendStatus(200);
 
 
 function agora() {
-    const agora_d = new Date();
-    return `${agora_d.getFullYear()}-${agora_d.getMonth()+1}-${agora_d.getDate()} ${agora_d.getHours()}:${agora_d.getMinutes()}:${agora_d.getSeconds()}`;
+  const agora_d = new Date();
+  return `${agora_d.getFullYear()}-${agora_d.getMonth()+1}-${agora_d.getDate()} ${agora_d.getHours()}:${agora_d.getMinutes()}:${agora_d.getSeconds()}`;
 }
+
+
+
 
 module.exports = router;

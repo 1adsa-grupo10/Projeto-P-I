@@ -1,7 +1,7 @@
 function atualizacaoPeriodica() {
     obterdadosporsensor(30000);
     obterdadosporsensor(30002);
-    setTimeout(atualizacaoPeriodica, 2000);
+    setTimeout(atualizacaoPeriodica, 4000);
 }
 
 function obterdadosporsensor(idSensor) {
@@ -92,7 +92,7 @@ function alertar(temperatura, umidade, idSensor) {
             div_alerta_temperatura2.innerHTML = mensagem_temperatura
         }
         if(temperatura < tempsAlface.tempMin){
-            mensagem_temperatura = '<span style="color: darkblue;">Temperatura do Alface baixa demais! <br>';
+            mensagem_temperatura = '<span style="color: darkblue;">Temperatura do Alface baixa demais!</span> <br>';
             div_alerta_temperatura2.innerHTML = mensagem_temperatura
         }
         if(umidade > tempsAlface.umiMax){
@@ -100,7 +100,7 @@ function alertar(temperatura, umidade, idSensor) {
             div_alerta_umidade2.innerHTML = mensagem_umidade
         }
         if(umidade < tempsAlface.umiMin){
-            mensagem_umidade = '<span style="color: darkblue;">Umidade do Alface Baixa demais! <br>';
+            mensagem_umidade = '<span style="color: darkblue;">Umidade do Alface Baixa demais!</span> <br>';
             div_alerta_umidade2.innerHTML = mensagem_umidade
         }
 
@@ -138,6 +138,34 @@ function sendData() {
 
 setInterval(() => {
     sendData();
-}, 2000);
+}, 4000);
 
+function retornarDash(idSensor){
+    if(idSensor == 30000){
+
+        var tempMax = 35;
+        var umiMax = 78;
+        var cultura = 'Tomate';
+
+        sessionStorage.setItem('idSensor', idSensor);
+        sessionStorage.setItem('tempMax', tempMax);
+        sessionStorage.setItem('umiMax', umiMax);
+        sessionStorage.setItem('tipoCultura', cultura);
+
+    }else if(idSensor == 30002){
+        
+        var umiMax = 80;
+        var tempMax = 33;
+        var cultura = 'Alface';
+
+        sessionStorage.setItem('idSensor', idSensor);
+        sessionStorage.setItem('tempMax', tempMax);
+        sessionStorage.setItem('umiMax', umiMax);
+        sessionStorage.setItem('tipoCultura', cultura);
+        
+    }
+    /* sessionStorage.setItem('idSensor', idSensor); */
+    window.location = "dashboard.html";
+}
+    
 window.onload = atualizacaoPeriodica;

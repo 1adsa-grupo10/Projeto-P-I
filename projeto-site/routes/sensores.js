@@ -8,7 +8,6 @@ var Estufa = require('../models').Estufa;
 var Sensor = require('../models').Sensor;
 
 
-
 router.get('/sensores-detalhe/:idSensor', (req, res, next) =>{
     console.log("Recuperando dados de uma Estufa...");
 

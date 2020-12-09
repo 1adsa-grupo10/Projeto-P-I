@@ -196,7 +196,14 @@ router.post('/alterar_dados/:id_usuario', function(req, res, next) {
         console.log(`Usuário atualizado com sucesso`);
         sessoes.shift()
         sessoes.push(email)
-        res.json(resultado);
+        var dadoNovo = {
+            idUsuario: id,
+            nomeUsuario: nome,
+            emailusuario: email,
+            senhaUsuario: senha
+        }
+        console.log(`Sessão nova criada: ${sessoes}`);
+        res.json(dadoNovo);
     }).catch(erro => {
         console.error(erro);
         res.status(500).send(erro.message);
