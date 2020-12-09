@@ -35,7 +35,26 @@
         </div>
         <div class="fale_conosco_container">
             <div class="fale_conosco">
-                <h3>FAQ</h3><br>
+                <div class="texto">
+                    <h2>Perguntas Frequentes</h2>
+                    <h4>Veja se respondemos as suas dúvidas com esse faq. Caso não, entre em contato conosco através do
+                        chat.</h4>
+                </div>
+                <div class="perguntas">
+                    <div class="perguntas_respostas" id="login_pergunta">Login <span id="login"
+                            onclick="aparecer_login()">+</span></div>
+                    <div class="perguntas_respostas" id="resposta_login">resposta login</div>
+                    <div class="perguntas_respostas" id="cadastro_pergunta">Cadastro <span id="cadastro"
+                            onclick="aparecer_cadastro()">+</span></div>
+                    <div class="perguntas_respostas" id="resposta_cadastro">Resposta cadastro</div>
+                    <div class="perguntas_respostas" id="estufa_pergunta">Criar estufa <span id="estufa"
+                            onclick="aparecer_estufa()">+</span></div>
+                    <div class="perguntas_respostas" id="resposta_estufa">Resposta criar estufa</div>
+                    <div class="perguntas_respostas" id="dashboard_pergunta">Dasheoard <span id="dashboard"
+                            onclick="aparecer_dashboard()">+</span></div>
+                    <div class="perguntas_respostas" id="resposta_dashboard">Resposta dashboard</div>
+                </div>
+                <!-- 
                 Como cadastrar?<br>
                 Resposta: Clique em Login/Cadastro no menu e clique em cadastrar, digite os dados solicitados e clique em cadastrar.<br><br>
                 Como cadastrar uma estufa?<br>
@@ -43,8 +62,8 @@
                 Como verificar a temperatura e umidade das estufas?<br>
                 Resposta: Acesse seu perfil e clique em estufas.<br><br>
                 ?<br>
-                Resposta: .<br><br>
-                   
+                Resposta: .<br><br> -->
+
             </div>
 
         </div>
@@ -91,3 +110,75 @@
 </body>
 
 </html>
+
+<script>
+
+    function aparecer_login() {
+        if (login.innerHTML == '+') {
+            login.innerHTML = '-'
+            resposta_login.style.display = 'flex';
+            cadastro_pergunta.style.display = 'none';
+            estufa_pergunta.style.display = 'none';
+            dashboard_pergunta.style.display = 'none';
+            resposta_login.style.height = '60%';
+        } else {
+            login.innerHTML = '+'
+            resposta_login.style.display = 'none';
+            cadastro_pergunta.style.display = 'flex';
+            estufa_pergunta.style.display = 'flex';
+            dashboard_pergunta.style.display = 'flex';
+        }
+
+    }
+    function aparecer_cadastro() {
+        if (cadastro.innerHTML == '+') {
+            cadastro.innerHTML = '-'
+            resposta_cadastro.style.display = 'flex';
+            estufa_pergunta.style.display = 'none';
+            dashboard_pergunta.style.display = 'none';
+            login_pergunta.style.display = 'none'
+            resposta_cadastro.style.height = '60%';
+        } else {
+            cadastro.innerHTML = '+'
+            resposta_cadastro.style.display = 'none';
+            estufa_pergunta.style.display = 'flex';
+            dashboard_pergunta.style.display = 'flex';
+            login_pergunta.style.display = 'flex'
+        }
+    }
+    function aparecer_estufa() {
+        if (estufa.innerHTML == '+') {
+            estufa.innerHTML = '-'
+            resposta_estufa.style.display = 'flex';
+            login_pergunta.style.display = 'none';
+            cadastro_pergunta.style.display = 'none';
+            dashboard_pergunta.style.display = 'none';
+            resposta_estufa.style.height = '60%';
+
+        } else {
+            estufa.innerHTML = '+'
+            resposta_estufa.style.display = 'none';
+            login_pergunta.style.display = 'flex';
+            cadastro_pergunta.style.display = 'flex';
+            dashboard_pergunta.style.display = 'flex';
+        }
+    }
+
+    function aparecer_dashboard() {
+        if (dashboard.innerHTML == '+') {
+            dashboard.innerHTML = '-'
+            resposta_dashboard.style.display = 'flex';
+            login_pergunta.style.display = 'none';
+            cadastro_pergunta.style.display = 'none';
+            estufa_pergunta.style.display = 'none';
+            resposta_dashboard.style.height = '60%';
+        } else {
+            dashboard.innerHTML = '+'
+            resposta_dashboard.style.display = 'none';
+            login_pergunta.style.display = 'flex';
+            cadastro_pergunta.style.display = 'flex';
+            estufa_pergunta.style.display = 'flex';
+        }
+    }
+
+</script>
