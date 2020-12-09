@@ -65,19 +65,19 @@ function alertar(temperatura, umidade, idSensor) {
         div_alerta_umidade.innerHTML = '';
 
         if (temperatura > tempsTomate.tempMax) {
-            mensagem_temperatura = 'Temperatura do Tomate alta demais! <br>';
+            mensagem_temperatura = '<span style="color: red;">Temperatura do Tomate alta demais!</span> <br>';
             div_alerta_temperatura.innerHTML = mensagem_temperatura;
         }
         if (temperatura < tempsTomate.tempMin) {
-            mensagem_temperatura = 'Temperatura do Tomate baixa demais! <br>';
+            mensagem_temperatura = '<span style="color: darkblue;">Temperatura do Tomate baixa demais!</span> <br>';
             div_alerta_temperatura.innerHTML = mensagem_temperatura;
         }
         if (umidade > tempsTomate.umiMax) {
-            mensagem_umidade = 'Umidade do Tomate alta demais! <br>';
+            mensagem_umidade = '<span style="color: red;">Umidade do Tomate alta demais!</span> <br>';
             div_alerta_umidade.innerHTML = mensagem_umidade;
         }
         if (umidade < tempsTomate.umiMin) {
-            mensagem_umidade = 'Umidade do Tomate baixa demais! <br>';
+            mensagem_umidade = '<span style="color: darkblue;">Umidade do Tomate baixa demais!</span> <br>';
             div_alerta_umidade.innerHTML = mensagem_umidade;
         }
 
