@@ -88,19 +88,19 @@ function alertar(temperatura, umidade, idSensor) {
         div_alerta_umidade2.innerHTML = '';
 
         if(temperatura > tempsAlface.tempMax){
-            mensagem_temperatura = 'Temperatura do Alface alta demais! <br>';
+            mensagem_temperatura = '<span style="color: red;">Temperatura do Alface alta demais!</span> <br>';
             div_alerta_temperatura2.innerHTML = mensagem_temperatura
         }
         if(temperatura < tempsAlface.tempMin){
-            mensagem_temperatura = 'Temperatura do Alface baixa demais! <br>';
+            mensagem_temperatura = '<span style="color: darkblue;">Temperatura do Alface baixa demais! <br>';
             div_alerta_temperatura2.innerHTML = mensagem_temperatura
         }
         if(umidade > tempsAlface.umiMax){
-            mensagem_umidade = 'Umidade do Alface alta demais! <br>';
+            mensagem_umidade = '<span style="color: red;">Umidade do Alface alta demais!</span> <br>';
             div_alerta_umidade2.innerHTML = mensagem_umidade
         }
         if(umidade < tempsAlface.umiMin){
-            mensagem_umidade = 'Umidade do Alface Baixa demais! <br>';
+            mensagem_umidade = '<span style="color: darkblue;">Umidade do Alface Baixa demais! <br>';
             div_alerta_umidade2.innerHTML = mensagem_umidade
         }
 
