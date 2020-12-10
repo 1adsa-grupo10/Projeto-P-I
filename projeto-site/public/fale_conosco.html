@@ -37,23 +37,17 @@
             <div class="fale_conosco">
                 <div class="texto">
                     <h2>Perguntas Frequentes</h2>
-                    <h4>Veja se respondemos as suas dúvidas com esse faq. Caso não, entre em contato conosco através do
-                        chat.</h4>
+                    <h4>Veja se respondemos as suas dúvidas com esse faq. Caso não, entre em contato conosco através do chat.
+                    </h4>
                 </div>
                 <div class="perguntas">
-                    <div class="perguntas_respostas" id="login_pergunta">Como efetuar um Login? <span id="login"
-                            onclick="aparecer_login()">+</span></div>
-                    <div class="perguntas_respostas" id="resposta_login">Para efetuar o login basta clicar na 
-                        opção Login/Cadastro no menu e digitar o seu enderço de email e sua senha.</div>
-                    <div class="perguntas_respostas" id="cadastro_pergunta">Como efetuar um Cadastro?<span id="cadastro"
-                            onclick="aparecer_cadastro()">+</span></div>
-                    <div class="perguntas_respostas" id="resposta_cadastro">Para se cadastrar basta clicar na 
-                        opção Login/Cadastro no menu e clicar em cadastrar e preencher os campos com os seus dados, depois é só clicar em cadastrar.</div>
-                    <div class="perguntas_respostas" id="estufa_pergunta">Onde visualizar as informações de temperatura e umidade de cada estufa?<span id="estufa"
-                            onclick="aparecer_estufa()">+</span></div>
+                    <div class="perguntas_respostas" id="login_pergunta">Como efetuar um Login? <span id="login" onclick="aparecer_login()">+</span></div>
+                    <div class="perguntas_respostas" id="resposta_login">Para efetuar o login basta clicar na opção Login/Cadastro no menu e digitar o seu enderço de email e sua senha.</div>
+                    <div class="perguntas_respostas" id="cadastro_pergunta">Como efetuar um Cadastro?<span id="cadastro" onclick="aparecer_cadastro()">+</span></div>
+                    <div class="perguntas_respostas" id="resposta_cadastro">Para se cadastrar basta clicar na opção Login/Cadastro no menu e clicar em cadastrar e preencher os campos com os seus dados, depois é só clicar em cadastrar.</div>
+                    <div class="perguntas_respostas" id="estufa_pergunta">Onde visualizar as informações de temperatura e umidade de cada estufa?<span id="estufa" onclick="aparecer_estufa()">+</span></div>
                     <div class="perguntas_respostas" id="resposta_estufa">Entre com seu login e senha e clique em estatísticas na página do cliente</div>
-                    <div class="perguntas_respostas" id="dashboard_pergunta">Como visualizar as informações dos sensores?<span id="dashboard"
-                            onclick="aparecer_dashboard()">+</span></div>
+                    <div class="perguntas_respostas" id="dashboard_pergunta">Como visualizar as informações dos sensores?<span id="dashboard" onclick="aparecer_dashboard()">+</span></div>
                     <div class="perguntas_respostas" id="resposta_dashboard">Entre com seu login e senha e clique em sensores na página do cliente</div>
                 </div>
                 <!-- 
@@ -114,7 +108,6 @@
 </html>
 
 <script>
-
     function aparecer_login() {
         if (login.innerHTML == '+') {
             login.innerHTML = '-'
@@ -122,7 +115,7 @@
             cadastro_pergunta.style.display = 'none';
             estufa_pergunta.style.display = 'none';
             dashboard_pergunta.style.display = 'none';
-            resposta_login.style.height = '60%';
+            resposta_login.style.height = '40%';
         } else {
             login.innerHTML = '+'
             resposta_login.style.display = 'none';
@@ -132,6 +125,7 @@
         }
 
     }
+
     function aparecer_cadastro() {
         if (cadastro.innerHTML == '+') {
             cadastro.innerHTML = '-'
@@ -139,7 +133,7 @@
             estufa_pergunta.style.display = 'none';
             dashboard_pergunta.style.display = 'none';
             login_pergunta.style.display = 'none'
-            resposta_cadastro.style.height = '60%';
+            resposta_cadastro.style.height = '40%';
         } else {
             cadastro.innerHTML = '+'
             resposta_cadastro.style.display = 'none';
@@ -148,6 +142,7 @@
             login_pergunta.style.display = 'flex'
         }
     }
+
     function aparecer_estufa() {
         if (estufa.innerHTML == '+') {
             estufa.innerHTML = '-'
@@ -155,7 +150,7 @@
             login_pergunta.style.display = 'none';
             cadastro_pergunta.style.display = 'none';
             dashboard_pergunta.style.display = 'none';
-            resposta_estufa.style.height = '60%';
+            resposta_estufa.style.height = '40%';
 
         } else {
             estufa.innerHTML = '+'
@@ -173,7 +168,7 @@
             login_pergunta.style.display = 'none';
             cadastro_pergunta.style.display = 'none';
             estufa_pergunta.style.display = 'none';
-            resposta_dashboard.style.height = '60%';
+            resposta_dashboard.style.height = '40%';
         } else {
             dashboard.innerHTML = '+'
             resposta_dashboard.style.display = 'none';
@@ -182,5 +177,4 @@
             estufa_pergunta.style.display = 'flex';
         }
     }
-
 </script>

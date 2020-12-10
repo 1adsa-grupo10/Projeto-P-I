@@ -60,26 +60,25 @@ body {}
     width: 100%;
 }
 
-.fale_conosco { 
-height: 90%;
-display: flex;
-background-color: white;
-color: white;
-width: 80%;
-padding-left: 20px;
-font-size: medium;
-font-family: Arial, Helvetica, sans-serif;
-margin-left: 5px;
-flex-direction: row;
-justify-content: space-evenly;
-align-items: center;
-/* border-radius: 20%; */
-border: 2px green solid;
-background-color: rgba(0, 0, 0, 0.705);
-flex-direction: column;
+.fale_conosco {
+    height: 90%;
+    display: flex;
+    background-color: #ffffffbb;
+    color: white;
+    width: 80%;
+    padding-left: 20px;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border-radius: 20%; */
+    border: 2px green solid;
+    flex-direction: column;
 }
 
-.texto{
+.texto {
     height: 13%;
     width: 100%;
     display: flex;
@@ -91,49 +90,61 @@ flex-direction: column;
 .texto h2 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-bottom: 3%;
 }
 
 .texto h4 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 40%;
+    line-height: 23px;
 }
 
 .perguntas {
     height: 70%;
     width: 65%;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
-.perguntas_respostas{
+.perguntas span {
+    font-size: 25px;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.perguntas_respostas {
     width: 95%;
     height: 10%;
     text-align: center;
-    background-color:  rgb(108, 226, 108);
+    background-color: rgb(108, 226, 108);
     color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
 }
 
-#resposta_login{
+#resposta_login {
     display: none;
 }
 
-#resposta_cadastro{
+#resposta_cadastro {
     display: none;
 }
 
-#resposta_estufa{
+#resposta_estufa {
     display: none;
 }
 
-#resposta_dashboard{
+#resposta_dashboard {
     display: none;
 }
 
